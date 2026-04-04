@@ -1,0 +1,912 @@
+1775291224.391] [33220:33220] [TOO] Command: pairing code 20 11442307380 --jcm true 
+[1775291224.393] [33220:33223] [CTL] JCM: Setting trust verification delegate
+[1775291224.393] [33220:33223] [CTL] Setting attestation nonce to random value
+[1775291224.393] [33220:33223] [CTL] Setting CSR nonce to random value
+[1775291224.393] [33220:33223] [CTL] Stopping commissionable node discovery over DNS-SD
+[1775291224.393] [33220:33223] [CTL] Starting commissionable node discovery over DNS-SD
+[1775291224.395] [33220:33223] [CTL] Discovered device with discriminator 1261 matches one of our setup payloads
+[1775291224.395] [33220:33223] [CTL] Discovered device to be commissioned over DNS-SD
+[1775291224.396] [33220:33223] [CTL] Attempting PASE connection to UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555
+[1775291224.396] [33220:33223] [IN] SecureSession[0x7b77c0007c60]: Allocated Type:1 LSID:4179
+[1775291224.396] [33220:33223] [SC] Assigned local session key ID 4179
+[1775291224.396] [33220:33223] [EM] <<< [E:48952i S:0 M:202859360] (U) Msg TX from 0FFEAD5725545F2E to 0:0000000000000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:20 (SecureChannel:PBKDFParamRequest) (B:98)
+[1775291224.396] [33220:33223] [EM] ??1 [E:48952i S:0 M:202859360] (U) Msg Retransmission to 0:0000000000000000 scheduled for 341ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.396] [33220:33223] [SC] Sent PBKDF param request [II:500ms AI:300ms AT:4000ms)
+[1775291224.396] [33220:33223] [CTL] Commission called for node ID 0x0000000000000014
+[1775291224.396] [33220:33223] [CTL] Discovered device with discriminator 1261 matches one of our setup payloads
+[1775291224.396] [33220:33223] [CTL] Discovered device to be commissioned over DNS-SD
+[1775291224.397] [33220:33223] [EM] >>> [E:48952i S:0 M:220682066 (Ack:202859360)] (U) Msg RX from 0:0000000000000000 [0000] to 0FFEAD5725545F2E --- Type 0000:21 (SecureChannel:PBKDFParamResponse) (B:174)
+[1775291224.397] [33220:33223] [EM] Found matching exchange: 48952i, Delegate: 0x7b77c003b8e0
+[1775291224.397] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:202859360 from Retrans Table on exchange 48952i
+[1775291224.397] [33220:33223] [SC] Received PBKDF param response
+[1775291224.397] [33220:33223] [SC] Peer assigned session ID 63888
+[1775291224.397] [33220:33223] [SC] Found MRP parameters in the message
+[1775291224.410] [33220:33223] [EM] <<< [E:48952i S:0 M:202859361 (Ack:220682066)] (U) Msg TX from 0FFEAD5725545F2E to 0:0000000000000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:22 (SecureChannel:PASE_Pake1) (B:96)
+[1775291224.410] [33220:33223] [EM] ??1 [E:48952i S:0 M:202859361] (U) Msg Retransmission to 0:0000000000000000 scheduled for 390ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.410] [33220:33223] [SC] Sent spake2p msg1
+[1775291224.413] [33220:33223] [EM] >>> [E:48952i S:0 M:220682067 (Ack:202859361)] (U) Msg RX from 0:0000000000000000 [0000] to 0FFEAD5725545F2E --- Type 0000:23 (SecureChannel:PASE_Pake2) (B:131)
+[1775291224.413] [33220:33223] [EM] Found matching exchange: 48952i, Delegate: 0x7b77c003b8e0
+[1775291224.413] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:202859361 from Retrans Table on exchange 48952i
+[1775291224.413] [33220:33223] [SC] Received spake2p msg2
+[1775291224.415] [33220:33223] [EM] <<< [E:48952i S:0 M:202859362 (Ack:220682067)] (U) Msg TX from 0FFEAD5725545F2E to 0:0000000000000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:24 (SecureChannel:PASE_Pake3) (B:63)
+[1775291224.415] [33220:33223] [EM] ??1 [E:48952i S:0 M:202859362] (U) Msg Retransmission to 0:0000000000000000 scheduled for 352ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.415] [33220:33223] [SC] Sent spake2p msg3
+[1775291224.415] [33220:33223] [EM] >>> [E:48952i S:0 M:220682068 (Ack:202859362)] (U) Msg RX from 0:0000000000000000 [0000] to 0FFEAD5725545F2E --- Type 0000:40 (SecureChannel:StatusReport) (B:34)
+[1775291224.416] [33220:33223] [EM] Found matching exchange: 48952i, Delegate: 0x7b77c003b8e0
+[1775291224.416] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:202859362 from Retrans Table on exchange 48952i
+[1775291224.416] [33220:33223] [SC] SecureSession[0x7b77c0007c60, LSID:4179]: State change 'kEstablishing' --> 'kActive'
+[1775291224.416] [33220:33223] [IN] SecureSession[0x7b77c0007c60]: Activated - Type:1 LSID:4179
+[1775291224.416] [33220:33223] [IN] New secure session activated for device <FFFFFFFB00000000, 0>, LSID:4179 PSID:63888!
+[1775291224.416] [33220:33223] [CTL] Remote device completed SPAKE2+ handshake
+[1775291224.416] [33220:33223] [CTL] PASE session established with commissionee. Stopping discovery.
+[1775291224.416] [33220:33223] [CTL] Stopping commissionable node discovery over DNS-SD
+[1775291224.416] [33220:33223] [TOO] Pairing Success
+[1775291224.416] [33220:33223] [TOO] PASE establishment successful
+[1775291224.416] [33220:33223] [CTL] Commissioning stage next step: 'SecurePairing' -> 'ReadCommissioningInfo'
+[1775291224.416] [33220:33223] [CTL] Performing next commissioning step 'ReadCommissioningInfo'
+[1775291224.416] [33220:33223] [CTL] Sending read requests for commissioning information
+[1775291224.416] [33220:33223] [DMG] SendReadRequest ReadClient[0x7b77c0024760]: Sending Read Request
+[1775291224.417] [33220:33223] [DMG] 0 data version filters provided, 0 not relevant, 0 encoded, 0 skipped due to lack of space
+[1775291224.417] [33220:33223] [EM] <<< [E:48953i S:4179 M:102879904] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:02 (IM:ReadRequest) (B:136)
+[1775291224.417] [33220:33223] [EM] ??1 [E:48953i S:4179 M:102879904] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 397ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.417] [33220:33223] [DMG] MoveToState ReadClient[0x7b77c0024760]: Moving to [AwaitingIn]
+[1775291224.417] [33220:33223] [EM] <<< [E:48952i S:0 M:202859363 (Ack:220682068)] (U) Msg TX from 0FFEAD5725545F2E to 0:0000000000000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
+[1775291224.417] [33220:33223] [EM] Flushed pending ack for MessageCounter:220682068 on exchange 48952i
+[1775291224.446] [33220:33223] [EM] >>> [E:48953i S:4179 M:252593187 (Ack:102879904)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:05 (IM:ReportData) (B:257)
+[1775291224.446] [33220:33223] [EM] Found matching exchange: 48953i, Delegate: 0x7b77c0024770
+[1775291224.446] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879904 from Retrans Table on exchange 48953i
+[1775291224.446] [33220:33223] [DMG] ReportDataMessage =
+[1775291224.446] [33220:33223] [DMG] {
+[1775291224.446] [33220:33223] [DMG] 	AttributeReportIBs =
+[1775291224.446] [33220:33223] [DMG] 	[
+[1775291224.446] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.446] [33220:33223] [DMG] 		{
+[1775291224.446] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.446] [33220:33223] [DMG] 			{
+[1775291224.446] [33220:33223] [DMG] 				DataVersion = 0x9e88baca,
+[1775291224.446] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.446] [33220:33223] [DMG] 				{
+[1775291224.446] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.446] [33220:33223] [DMG] 					Cluster = 0x28,
+[1775291224.446] [33220:33223] [DMG] 					Attribute = 0x0000_0004,
+[1775291224.446] [33220:33223] [DMG] 				}
+[1775291224.446] [33220:33223] [DMG] 					
+[1775291224.446] [33220:33223] [DMG] 				Data = 32769 (unsigned), 
+[1775291224.446] [33220:33223] [DMG] 			},
+[1775291224.446] [33220:33223] [DMG] 			
+[1775291224.446] [33220:33223] [DMG] 		},
+[1775291224.446] [33220:33223] [DMG] 		
+[1775291224.446] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.446] [33220:33223] [DMG] 		{
+[1775291224.446] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.446] [33220:33223] [DMG] 			{
+[1775291224.446] [33220:33223] [DMG] 				DataVersion = 0x9e88baca,
+[1775291224.446] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.447] [33220:33223] [DMG] 				{
+[1775291224.447] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.447] [33220:33223] [DMG] 					Cluster = 0x28,
+[1775291224.447] [33220:33223] [DMG] 					Attribute = 0x0000_0002,
+[1775291224.447] [33220:33223] [DMG] 				}
+[1775291224.447] [33220:33223] [DMG] 					
+[1775291224.447] [33220:33223] [DMG] 				Data = 65521 (unsigned), 
+[1775291224.447] [33220:33223] [DMG] 			},
+[1775291224.447] [33220:33223] [DMG] 			
+[1775291224.447] [33220:33223] [DMG] 		},
+[1775291224.447] [33220:33223] [DMG] 		
+[1775291224.447] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.447] [33220:33223] [DMG] 		{
+[1775291224.447] [33220:33223] [DMG] 			AttributeStatusIB =
+[1775291224.447] [33220:33223] [DMG] 			{
+[1775291224.447] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.447] [33220:33223] [DMG] 				{
+[1775291224.447] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.447] [33220:33223] [DMG] 					Cluster = 0x30,
+[1775291224.447] [33220:33223] [DMG] 					Attribute = 0x0000_000C,
+[1775291224.447] [33220:33223] [DMG] 				}
+[1775291224.447] [33220:33223] [DMG] 					
+[1775291224.447] [33220:33223] [DMG] 				StatusIB =
+[1775291224.447] [33220:33223] [DMG] 				{
+[1775291224.447] [33220:33223] [DMG] 					status = 0x86 (UNSUPPORTED_ATTRIBUTE),
+[1775291224.447] [33220:33223] [DMG] 				},
+[1775291224.447] [33220:33223] [DMG] 				
+[1775291224.447] [33220:33223] [DMG] 			},
+[1775291224.447] [33220:33223] [DMG] 			
+[1775291224.447] [33220:33223] [DMG] 		},
+[1775291224.447] [33220:33223] [DMG] 		
+[1775291224.447] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.447] [33220:33223] [DMG] 		{
+[1775291224.447] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.447] [33220:33223] [DMG] 			{
+[1775291224.447] [33220:33223] [DMG] 				DataVersion = 0x2bfe032c,
+[1775291224.447] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.447] [33220:33223] [DMG] 				{
+[1775291224.447] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.447] [33220:33223] [DMG] 					Cluster = 0x30,
+[1775291224.447] [33220:33223] [DMG] 					Attribute = 0x0000_0003,
+[1775291224.447] [33220:33223] [DMG] 				}
+[1775291224.447] [33220:33223] [DMG] 					
+[1775291224.447] [33220:33223] [DMG] 				Data = 2 (unsigned), 
+[1775291224.447] [33220:33223] [DMG] 			},
+[1775291224.447] [33220:33223] [DMG] 			
+[1775291224.447] [33220:33223] [DMG] 		},
+[1775291224.447] [33220:33223] [DMG] 		
+[1775291224.447] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.447] [33220:33223] [DMG] 		{
+[1775291224.447] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.447] [33220:33223] [DMG] 			{
+[1775291224.447] [33220:33223] [DMG] 				DataVersion = 0x2bfe032c,
+[1775291224.447] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.447] [33220:33223] [DMG] 				{
+[1775291224.447] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.447] [33220:33223] [DMG] 					Cluster = 0x30,
+[1775291224.447] [33220:33223] [DMG] 					Attribute = 0x0000_0002,
+[1775291224.447] [33220:33223] [DMG] 				}
+[1775291224.447] [33220:33223] [DMG] 					
+[1775291224.447] [33220:33223] [DMG] 				Data = 0 (unsigned), 
+[1775291224.447] [33220:33223] [DMG] 			},
+[1775291224.448] [33220:33223] [DMG] 			
+[1775291224.448] [33220:33223] [DMG] 		},
+[1775291224.448] [33220:33223] [DMG] 		
+[1775291224.448] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.448] [33220:33223] [DMG] 		{
+[1775291224.448] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.448] [33220:33223] [DMG] 			{
+[1775291224.448] [33220:33223] [DMG] 				DataVersion = 0x2bfe032c,
+[1775291224.448] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.448] [33220:33223] [DMG] 				{
+[1775291224.448] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.448] [33220:33223] [DMG] 					Cluster = 0x30,
+[1775291224.448] [33220:33223] [DMG] 					Attribute = 0x0000_0001,
+[1775291224.448] [33220:33223] [DMG] 				}
+[1775291224.448] [33220:33223] [DMG] 					
+[1775291224.448] [33220:33223] [DMG] 				Data = 
+[1775291224.448] [33220:33223] [DMG] 				{
+[1775291224.448] [33220:33223] [DMG] 					0x0 = 60 (unsigned), 
+[1775291224.448] [33220:33223] [DMG] 					0x1 = 900 (unsigned), 
+[1775291224.448] [33220:33223] [DMG] 				},
+[1775291224.448] [33220:33223] [DMG] 			},
+[1775291224.448] [33220:33223] [DMG] 			
+[1775291224.448] [33220:33223] [DMG] 		},
+[1775291224.448] [33220:33223] [DMG] 		
+[1775291224.448] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.448] [33220:33223] [DMG] 		{
+[1775291224.448] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.448] [33220:33223] [DMG] 			{
+[1775291224.448] [33220:33223] [DMG] 				DataVersion = 0x2bfe032c,
+[1775291224.448] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.448] [33220:33223] [DMG] 				{
+[1775291224.448] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.448] [33220:33223] [DMG] 					Cluster = 0x30,
+[1775291224.448] [33220:33223] [DMG] 					Attribute = 0x0000_0000,
+[1775291224.448] [33220:33223] [DMG] 				}
+[1775291224.448] [33220:33223] [DMG] 					
+[1775291224.448] [33220:33223] [DMG] 				Data = 0 (unsigned), 
+[1775291224.448] [33220:33223] [DMG] 			},
+[1775291224.448] [33220:33223] [DMG] 			
+[1775291224.448] [33220:33223] [DMG] 		},
+[1775291224.448] [33220:33223] [DMG] 		
+[1775291224.448] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.448] [33220:33223] [DMG] 		{
+[1775291224.448] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.448] [33220:33223] [DMG] 			{
+[1775291224.448] [33220:33223] [DMG] 				DataVersion = 0x2bfe032c,
+[1775291224.448] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.448] [33220:33223] [DMG] 				{
+[1775291224.448] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.448] [33220:33223] [DMG] 					Cluster = 0x30,
+[1775291224.448] [33220:33223] [DMG] 					Attribute = 0x0000_0004,
+[1775291224.448] [33220:33223] [DMG] 				}
+[1775291224.448] [33220:33223] [DMG] 					
+[1775291224.448] [33220:33223] [DMG] 				Data = true, 
+[1775291224.448] [33220:33223] [DMG] 			},
+[1775291224.448] [33220:33223] [DMG] 			
+[1775291224.448] [33220:33223] [DMG] 		},
+[1775291224.448] [33220:33223] [DMG] 		
+[1775291224.448] [33220:33223] [DMG] 	],
+[1775291224.449] [33220:33223] [DMG] 	
+[1775291224.449] [33220:33223] [DMG] 	SuppressResponse = true, 
+[1775291224.449] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.449] [33220:33223] [DMG] }
+[1775291224.449] [33220:33223] [DMG] SendReadRequest ReadClient[0x7b77c0024760]: Sending Read Request
+[1775291224.449] [33220:33223] [DMG] 0 data version filters provided, 0 not relevant, 0 encoded, 0 skipped due to lack of space
+[1775291224.449] [33220:33223] [EM] <<< [E:48954i S:4179 M:102879905] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:02 (IM:ReadRequest) (B:99)
+[1775291224.450] [33220:33223] [EM] ??1 [E:48954i S:4179 M:102879905] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 365ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.450] [33220:33223] [DMG] MoveToState ReadClient[0x7b77c0024760]: Moving to [AwaitingIn]
+[1775291224.450] [33220:33223] [EM] <<< [E:48953i S:4179 M:102879906 (Ack:252593187)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.450] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593187 on exchange 48953i
+[1775291224.451] [33220:33223] [EM] >>> [E:48954i S:4179 M:252593188 (Ack:102879905)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:05 (IM:ReportData) (B:1052)
+[1775291224.451] [33220:33223] [EM] Found matching exchange: 48954i, Delegate: 0x7b77c0024770
+[1775291224.451] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879905 from Retrans Table on exchange 48954i
+[1775291224.451] [33220:33223] [DMG] ReportDataMessage =
+[1775291224.451] [33220:33223] [DMG] {
+[1775291224.451] [33220:33223] [DMG] 	AttributeReportIBs =
+[1775291224.451] [33220:33223] [DMG] 	[
+[1775291224.451] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.451] [33220:33223] [DMG] 		{
+[1775291224.451] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.451] [33220:33223] [DMG] 			{
+[1775291224.451] [33220:33223] [DMG] 				DataVersion = 0xdf2b62e7,
+[1775291224.451] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.451] [33220:33223] [DMG] 				{
+[1775291224.451] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.451] [33220:33223] [DMG] 					Cluster = 0x3e,
+[1775291224.451] [33220:33223] [DMG] 					Attribute = 0x0000_0004,
+[1775291224.451] [33220:33223] [DMG] 				}
+[1775291224.451] [33220:33223] [DMG] 					
+[1775291224.451] [33220:33223] [DMG] 				Data = [
+[1775291224.451] [33220:33223] [DMG] 						[
+[1775291224.451] [33220:33223] [DMG] 							0x15, 0x30, 0x01, 0x01, 0x01, 0x24, 0x02, 0x01, 0x37, 0x03, 0x24, 0x14, 0x01, 0x18, 0x26, 0x04, 0x80, 0x22, 0x81, 0x27, 0x26, 0x05, 0x80, 0x25, 0x4d, 0x3a, 0x37, 0x06, 0x24, 0x14, 0x01, 0x18, 0x24, 0x07, 0x01, 0x24, 0x08, 0x01, 0x30, 0x09, 0x41, 0x04, 0xe0, 0x92, 0xb8, 0xb1, 0xfe, 0x7d, 0x9d, 0x83, 0x04, 0x5d, 0x5c, 0x82, 0xfe, 0x86, 0x9b, 0x9f, 0xe0, 0x93, 0x6f, 0x1e, 0x23, 0xb9, 0x1d, 0x7c, 0x7f, 0xc4, 0x1d, 0xd9, 0x3d, 0xa2, 0xa5, 0xc8, 0xd4, 0x8a, 0x79, 0x09, 0xf2, 0xce, 0xfb, 0x7a, 0x25, 0x04, 0xc4, 0x26, 0x59, 0x8f, 0xb6, 0x3f, 0x74, 0xe6, 0xca, 0x4f, 0x4a, 0x7e, 0xf1, 0x42, 0x1d, 0xef, 0x68, 0x6b, 0x3a, 0x88, 0x9b, 0x1d, 0x37, 0x0a, 0x35, 0x01, 0x29, 0x01, 0x18, 0x24, 0x02, 0x60, 0x30, 0x04, 0x14, 0x23, 0x50, 0x81, 0x63, 0x9f, 0x8b, 0x10, 0x12, 0x63, 0x74, 0xdb, 0xa8, 0x7f, 0xdb, 0x2f, 0x24, 0xd9, 0x7f, 0xd7, 0xe1, 0x30, 0x05, 0x14, 0x23, 0x50, 0x81, 0x63, 0x9f, 0x8b, 0x10, 0x12, 0x63, 0x74, 0xdb, 0xa8, 0x7f, 0xdb, 0x2f, 0x24, 0xd9, 0x7f, 0xd7, 0xe1, 0x18, 0x30, 0x0b, 0x40, 0x79, 0xee, 0xab, 0xfb, 0x75, 0x7e, 0x95, 0x8e, 0xce, 0xca, 0x4c, 0x86, 0xa5, 0xe5, 0x6f, 0x50, 0x0e, 0x20, 0x55, 0xa6, 0xa7, 0xf6, 0xfb, 0x92, 0xf6, 0xee, 0x3f, 0x62, 0x13, 0xf9, 0x2e, 0x4f, 0x90, 0x5e, 0xbf, 0x97, 0x34, 0xd2, 0x07, 0x3d, 0x82, 0x8a, 0x53, 0x38, 0xbc, 0xd0, 0x9d, 0x52, 0xc0, 0x58, 0x87, 0x58, 0x81, 0x38, 0xcd, 0x9a, 0x8a, 0x11, 0x2c, 0x20, 0x2b, 0x84, 0xb6, 0x7a, 0x18, 
+[1775291224.451] [33220:33223] [DMG] 					] (231 bytes)[
+[1775291224.452] [33220:33223] [DMG] 							0x15, 0x30, 0x01, 0x01, 0x01, 0x24, 0x02, 0x01, 0x37, 0x03, 0x24, 0x14, 0x01, 0x18, 0x26, 0x04, 0x80, 0x22, 0x81, 0x27, 0x26, 0x05, 0x80, 0x25, 0x4d, 0x3a, 0x37, 0x06, 0x24, 0x14, 0x01, 0x18, 0x24, 0x07, 0x01, 0x24, 0x08, 0x01, 0x30, 0x09, 0x41, 0x04, 0x7f, 0xa9, 0x00, 0x2b, 0x42, 0x9c, 0x00, 0xdb, 0xc2, 0xb2, 0x15, 0x31, 0x1c, 0x41, 0xa1, 0x51, 0xb8, 0x10, 0x2f, 0xb1, 0x6c, 0xbc, 0x6d, 0x07, 0x77, 0x66, 0x36, 0xf8, 0x9e, 0xaf, 0x60, 0x6a, 0x22, 0x3d, 0x95, 0xc0, 0x45, 0xc4, 0xa8, 0x6c, 0x77, 0x99, 0xf4, 0xf7, 0x78, 0xce, 0x12, 0xac, 0xa5, 0xc1, 0xf6, 0xfe, 0xd6, 0x67, 0xd6, 0xe7, 0x58, 0xf0, 0x2d, 0xab, 0x74, 0x78, 0x72, 0x74, 0x37, 0x0a, 0x35, 0x01, 0x29, 0x01, 0x18, 0x24, 0x02, 0x60, 0x30, 0x04, 0x14, 0xfc, 0x20, 0x9e, 0x96, 0x43, 0xa9, 0xdf, 0x9e, 0x7d, 0x88, 0x06, 0xc3, 0xf6, 0xb9, 0x51, 0xc0, 0xd8, 0x75, 0x59, 0x2e, 0x30, 0x05, 0x14, 0xfc, 0x20, 0x9e, 0x96, 0x43, 0xa9, 0xdf, 0x9e, 0x7d, 0x88, 0x06, 0xc3, 0xf6, 0xb9, 0x51, 0xc0, 0xd8, 0x75, 0x59, 0x2e, 0x18, 0x30, 0x0b, 0x40, 0x59, 0xa6, 0x4a, 0x87, 0x3d, 0x97, 0x68, 0x4b, 0xc8, 0x4a, 0x75, 0xbb, 0xd7, 0x02, 0x52, 0x2a, 0x51, 0xa2, 0x1b, 0x9e, 0x6d, 0xcf, 0x17, 0x9b, 0xc5, 0x78, 0xd3, 0xe5, 0x47, 0x91, 0xf5, 0x7e, 0xca, 0xae, 0xa6, 0x14, 0xe0, 0xfa, 0x09, 0x28, 0x29, 0x9d, 0x6f, 0x73, 0xca, 0x75, 0x5b, 0xc7, 0xc6, 0x7c, 0x48, 0x17, 0xc9, 0x0c, 0x13, 0xa6, 0x77, 0x81, 0x23, 0x91, 0x2b, 0x49, 0x8a, 0x57, 0x18, 
+[1775291224.452] [33220:33223] [DMG] 					] (231 bytes)
+[1775291224.452] [33220:33223] [DMG] 				],
+[1775291224.452] [33220:33223] [DMG] 			},
+[1775291224.452] [33220:33223] [DMG] 			
+[1775291224.452] [33220:33223] [DMG] 		},
+[1775291224.452] [33220:33223] [DMG] 		
+[1775291224.452] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.452] [33220:33223] [DMG] 		{
+[1775291224.452] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.452] [33220:33223] [DMG] 			{
+[1775291224.452] [33220:33223] [DMG] 				DataVersion = 0xdf2b62e7,
+[1775291224.452] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.452] [33220:33223] [DMG] 				{
+[1775291224.452] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.452] [33220:33223] [DMG] 					Cluster = 0x3e,
+[1775291224.452] [33220:33223] [DMG] 					Attribute = 0x0000_0000,
+[1775291224.452] [33220:33223] [DMG] 				}
+[1775291224.452] [33220:33223] [DMG] 					
+[1775291224.452] [33220:33223] [DMG] 				Data = [
+[1775291224.452] [33220:33223] [DMG] 						
+[1775291224.452] [33220:33223] [DMG] 					{
+[1775291224.452] [33220:33223] [DMG] 						0x1 = [
+[1775291224.452] [33220:33223] [DMG] 								0x15, 0x30, 0x01, 0x01, 0x01, 0x24, 0x02, 0x01, 0x37, 0x03, 0x24, 0x13, 0x02, 0x18, 0x26, 0x04, 0x80, 0x22, 0x81, 0x27, 0x26, 0x05, 0x80, 0x25, 0x4d, 0x3a, 0x37, 0x06, 0x24, 0x15, 0x01, 0x27, 0x11, 0xff, 0xff, 0xff, 0xff, 0xef, 0xff, 0xff, 0xff, 0x18, 0x24, 0x07, 0x01, 0x24, 0x08, 0x01, 0x30, 0x09, 0x41, 0x04, 0x00, 0xff, 0x7e, 0x4e, 0xb6, 0xe3, 0xbe, 0x63, 0xc9, 0x12, 0x73, 0x2d, 0xa0, 0x9d, 0x8a, 0xeb, 0xdc, 0x23, 0xdd, 0x09, 0x33, 0x70, 0x7f, 0xa7, 0x48, 0xc8, 0x5a, 0xcd, 0xb2, 0x77, 0xd4, 0x4d, 0xd3, 0x84, 0xc6, 0x36, 0x44, 0xd1, 0x0b, 0xdc, 0xa4, 0xc6, 0xa6, 0x9e, 0x2b, 0xb4, 0xac, 0xe8, 0xc7, 0xd2, 0x10, 0x97, 0xee, 0x56, 0xc3, 0x9c, 0x1c, 0x56, 0x01, 0x5c, 0x59, 0xfc, 0xdf, 0x3d, 0x37, 0x0a, 0x35, 0x01, 0x28, 0x01, 0x18, 0x24, 0x02, 0x01, 0x36, 0x03, 0x04, 0x02, 0x04, 0x01, 0x18, 0x30, 0x04, 0x14, 0xdd, 0x98, 0x97, 0xd5, 0xcf, 0xb4, 0xdc, 0x58, 0xc2, 0xec, 0x07, 0xab, 0xad, 0x10, 0x38, 0x1d, 0x9b, 0x7e, 0x82, 0x86, 0x30, 0x05, 0x14, 0x1f, 0x5c, 0x81, 0x93, 0x7a, 0x4e, 0x28, 0x32, 0x61, 0x9a, 0x5a, 0x0f, 0x71, 0xe3, 0x46, 0xbf, 0x8c, 0xbc, 0x29, 0x26, 0x18, 0x30, 0x0b, 0x40, 0x0e, 0xf3, 0x20, 0xd7, 0x45, 0xb5, 0xc8, 0x2c, 0xa0, 0x1d, 0x82, 0x93, 0xe6, 0x98, 0x96, 0xda, 0x03, 0xa6, 0x54, 0x80, 0xee, 0xcc, 0x15, 0x17, 0x4d, 0xa0, 0xfc, 0xc9, 0x8e, 0x4d, 0xbf, 0xe7, 0x26, 0x03, 0x0b, 0xb5, 0x7e, 0x51, 0x75, 0xdc, 0x3c, 0x39, 0xcc, 0xc7, 0xad, 0x29, 0x7b, 0xdd, 0xb5, 0x85, 0xbe, 0x06, 0x22, 0x71, 0xf9, 0x3d, 0x98, 0x6f, 0xc9, 0xb4, 0x61, 0xf8, 0x69, 0xb4, 0x18, 
+[1775291224.452] [33220:33223] [DMG] 						] (248 bytes)
+[1775291224.452] [33220:33223] [DMG] 						0x2 = [
+[1775291224.452] [33220:33223] [DMG] 								0x15, 0x30, 0x01, 0x01, 0x01, 0x24, 0x02, 0x01, 0x37, 0x03, 0x24, 0x14, 0x01, 0x18, 0x26, 0x04, 0x80, 0x22, 0x81, 0x27, 0x26, 0x05, 0x80, 0x25, 0x4d, 0x3a, 0x37, 0x06, 0x24, 0x13, 0x02, 0x18, 0x24, 0x07, 0x01, 0x24, 0x08, 0x01, 0x30, 0x09, 0x41, 0x04, 0x28, 0xef, 0x7e, 0x33, 0x40, 0x54, 0x35, 0x55, 0x9d, 0x84, 0x26, 0x13, 0xfa, 0xff, 0x4f, 0xa4, 0x26, 0x10, 0xc9, 0x9e, 0xab, 0x66, 0x05, 0x96, 0x83, 0xc5, 0xf2, 0x03, 0x5d, 0xbc, 0xdb, 0x0d, 0x6c, 0x07, 0x35, 0xc5, 0xf6, 0xdf, 0x91, 0xe8, 0x45, 0xbf, 0x3d, 0x85, 0x69, 0x5d, 0xdb, 0xcc, 0x2c, 0xb3, 0x7a, 0x28, 0x24, 0x0f, 0x95, 0x5d, 0xb5, 0x94, 0xb3, 0x92, 0xb5, 0x5d, 0x01, 0x75, 0x37, 0x0a, 0x35, 0x01, 0x29, 0x01, 0x18, 0x24, 0x02, 0x60, 0x30, 0x04, 0x14, 0x1f, 0x5c, 0x81, 0x93, 0x7a, 0x4e, 0x28, 0x32, 0x61, 0x9a, 0x5a, 0x0f, 0x71, 0xe3, 0x46, 0xbf, 0x8c, 0xbc, 0x29, 0x26, 0x30, 0x05, 0x14, 0x23, 0x50, 0x81, 0x63, 0x9f, 0x8b, 0x10, 0x12, 0x63, 0x74, 0xdb, 0xa8, 0x7f, 0xdb, 0x2f, 0x24, 0xd9, 0x7f, 0xd7, 0xe1, 0x18, 0x30, 0x0b, 0x40, 0xeb, 0x24, 0xf3, 0xd5, 0xef, 0xca, 0x81, 0xda, 0x5f, 0xee, 0xea, 0x7c, 0xfa, 0x67, 0x06, 0x6a, 0x36, 0x9e, 0x8d, 0x29, 0x45, 0x19, 0x40, 0x6b, 0x06, 0x15, 0x6a, 0x37, 0xe4, 0xa4, 0x55, 0x73, 0x75, 0x1c, 0x64, 0xb8, 0xf0, 0x77, 0xd1, 0xcb, 0xf3, 0x0e, 0xf2, 0x9c, 0x74, 0xd7, 0xd6, 0xa1, 0xa6, 0x5f, 0x83, 0x28, 0xf1, 0x4e, 0x77, 0x8b, 0xe7, 0x5e, 0xda, 0xb0, 0xa0, 0xf0, 0x9b, 0x34, 0x18, 
+[1775291224.452] [33220:33223] [DMG] 						] (231 bytes)
+[1775291224.452] [33220:33223] [DMG] 						0xfe = 1 (unsigned), 
+[1775291224.452] [33220:33223] [DMG] 					},
+[1775291224.452] [33220:33223] [DMG] 				],
+[1775291224.452] [33220:33223] [DMG] 			},
+[1775291224.452] [33220:33223] [DMG] 			
+[1775291224.452] [33220:33223] [DMG] 		},
+[1775291224.452] [33220:33223] [DMG] 		
+[1775291224.452] [33220:33223] [DMG] 	],
+[1775291224.452] [33220:33223] [DMG] 	
+[1775291224.452] [33220:33223] [DMG] 	MoreChunkedMessages = true, 
+[1775291224.452] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.452] [33220:33223] [DMG] }
+[1775291224.453] [33220:33223] [EM] <<< [E:48954i S:4179 M:102879907 (Ack:252593188)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:01 (IM:StatusResponse) (B:42)
+[1775291224.453] [33220:33223] [EM] ??1 [E:48954i S:4179 M:102879907] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 340ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.454] [33220:33223] [EM] >>> [E:48954i S:4179 M:252593189 (Ack:102879907)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:05 (IM:ReportData) (B:859)
+[1775291224.454] [33220:33223] [EM] Found matching exchange: 48954i, Delegate: 0x7b77c0024770
+[1775291224.454] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879907 from Retrans Table on exchange 48954i
+[1775291224.454] [33220:33223] [DMG] ReportDataMessage =
+[1775291224.454] [33220:33223] [DMG] {
+[1775291224.454] [33220:33223] [DMG] 	AttributeReportIBs =
+[1775291224.454] [33220:33223] [DMG] 	[
+[1775291224.454] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.454] [33220:33223] [DMG] 		{
+[1775291224.454] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.454] [33220:33223] [DMG] 			{
+[1775291224.454] [33220:33223] [DMG] 				DataVersion = 0xdf2b62e7,
+[1775291224.454] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.454] [33220:33223] [DMG] 				{
+[1775291224.454] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.454] [33220:33223] [DMG] 					Cluster = 0x3e,
+[1775291224.454] [33220:33223] [DMG] 					Attribute = 0x0000_0000,
+[1775291224.454] [33220:33223] [DMG] 					ListIndex = Null,
+[1775291224.454] [33220:33223] [DMG] 				}
+[1775291224.454] [33220:33223] [DMG] 					
+[1775291224.454] [33220:33223] [DMG] 				Data = 
+[1775291224.454] [33220:33223] [DMG] 				{
+[1775291224.454] [33220:33223] [DMG] 					0x1 = [
+[1775291224.454] [33220:33223] [DMG] 							0x15, 0x30, 0x01, 0x01, 0x01, 0x24, 0x02, 0x01, 0x37, 0x03, 0x24, 0x13, 0x03, 0x2c, 0x08, 0x0e, 0x6a, 0x66, 0x2d, 0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x2d, 0x69, 0x63, 0x61, 0x63, 0x18, 0x26, 0x04, 0x80, 0x22, 0x81, 0x27, 0x26, 0x05, 0x80, 0x25, 0x4d, 0x3a, 0x37, 0x06, 0x24, 0x15, 0x01, 0x24, 0x11, 0x0b, 0x26, 0x16, 0x01, 0x00, 0xff, 0xff, 0x26, 0x16, 0x01, 0x00, 0xfe, 0xff, 0x18, 0x24, 0x07, 0x01, 0x24, 0x08, 0x01, 0x30, 0x09, 0x41, 0x04, 0x82, 0xa3, 0x54, 0x41, 0x06, 0x7a, 0xed, 0x3a, 0x21, 0x00, 0x82, 0xef, 0x5f, 0x15, 0x1b, 0xad, 0x5a, 0xae, 0x08, 0x66, 0x21, 0xd1, 0x98, 0x96, 0x9b, 0x50, 0xa3, 0x97, 0xe5, 0xda, 0x15, 0x58, 0xe6, 0x1c, 0x6b, 0xc6, 0xab, 0x0e, 0x4d, 0x1a, 0x03, 0x91, 0x68, 0xa8, 0x87, 0x39, 0xde, 0x18, 0x48, 0xe2, 0xc5, 0x64, 0x1e, 0xc4, 0x55, 0xea, 0x83, 0xbb, 0xda, 0x91, 0x9d, 0x04, 0xf0, 0x59, 0x37, 0x0a, 0x35, 0x01, 0x28, 0x01, 0x18, 0x24, 0x02, 0x01, 0x36, 0x03, 0x04, 0x02, 0x04, 0x01, 0x18, 0x30, 0x04, 0x14, 0xda, 0x05, 0x1e, 0xda, 0xab, 0x6f, 0x50, 0xe9, 0xe7, 0x2c, 0x83, 0x90, 0x5e, 0x86, 0x62, 0x07, 0x9a, 0x5d, 0x0b, 0x85, 0x30, 0x05, 0x14, 0x9b, 0x94, 0x71, 0x13, 0x67, 0xf7, 0x4d, 0x1a, 0xbb, 0x5e, 0xed, 0xa9, 0xf1, 0xce, 0xa9, 0x34, 0x5d, 0x79, 0x2a, 0x7f, 0x18, 0x30, 0x0b, 0x40, 0x34, 0x22, 0xfc, 0x80, 0x57, 0xbc, 0xa5, 0x42, 0x06, 0xc9, 0x4b, 0x58, 0x19, 0x64, 0x2e, 0x49, 0xa4, 0xda, 0x5c, 0x04, 0x06, 0xac, 0xee, 0x37, 0x9f, 0xdc, 0xab, 0x86, 0x90, 0x62, 0x28, 0x72, 0xa7, 0x21, 0x39, 0x9b, 0xce, 0x59, 0x48, 0x49, 0x69, 0x7b, 0x98, 0x6c, 0x1b, 0x3d, 0x8e, 0x1e, 0x07, 0x68, 0xec, 0x10, 0xad, 0xa8, 0x1f, 0x3f, 0x0c, 0x63, 0x42, 0x89, 0x80, 0xdf, 0x6f, 0x5e, 0x18, 
+[1775291224.454] [33220:33223] [DMG] 					] (270 bytes)
+[1775291224.454] [33220:33223] [DMG] 					0x2 = [
+[1775291224.455] [33220:33223] [DMG] 							0x15, 0x30, 0x01, 0x01, 0x01, 0x24, 0x02, 0x01, 0x37, 0x03, 0x24, 0x14, 0x01, 0x18, 0x26, 0x04, 0x80, 0x22, 0x81, 0x27, 0x26, 0x05, 0x80, 0x25, 0x4d, 0x3a, 0x37, 0x06, 0x24, 0x13, 0x03, 0x2c, 0x08, 0x0e, 0x6a, 0x66, 0x2d, 0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x2d, 0x69, 0x63, 0x61, 0x63, 0x18, 0x24, 0x07, 0x01, 0x24, 0x08, 0x01, 0x30, 0x09, 0x41, 0x04, 0x39, 0xe4, 0x40, 0x7c, 0x08, 0xc5, 0x1e, 0x13, 0xb4, 0x93, 0x0f, 0x86, 0xe2, 0xb8, 0xd1, 0xdd, 0xa1, 0x5a, 0xaf, 0xda, 0x3f, 0x7b, 0x03, 0x41, 0xa6, 0x95, 0xfb, 0x3f, 0x61, 0x93, 0x3a, 0xcd, 0x35, 0x66, 0xfe, 0x48, 0x16, 0x60, 0x84, 0x93, 0x7a, 0x05, 0xb1, 0xa2, 0x8e, 0x43, 0xf1, 0x27, 0xbd, 0xd8, 0xd3, 0xc5, 0xdc, 0x08, 0x96, 0xed, 0x81, 0x22, 0xfa, 0x7b, 0xd6, 0xac, 0xfc, 0x8f, 0x37, 0x0a, 0x35, 0x01, 0x29, 0x01, 0x18, 0x24, 0x02, 0x60, 0x30, 0x04, 0x14, 0x9b, 0x94, 0x71, 0x13, 0x67, 0xf7, 0x4d, 0x1a, 0xbb, 0x5e, 0xed, 0xa9, 0xf1, 0xce, 0xa9, 0x34, 0x5d, 0x79, 0x2a, 0x7f, 0x30, 0x05, 0x14, 0xfc, 0x20, 0x9e, 0x96, 0x43, 0xa9, 0xdf, 0x9e, 0x7d, 0x88, 0x06, 0xc3, 0xf6, 0xb9, 0x51, 0xc0, 0xd8, 0x75, 0x59, 0x2e, 0x18, 0x30, 0x0b, 0x40, 0xdd, 0xa3, 0x47, 0x21, 0x85, 0xe9, 0x61, 0x17, 0x60, 0x7b, 0x6e, 0x02, 0xd7, 0x74, 0x8a, 0x1a, 0x71, 0x92, 0x98, 0x2c, 0x30, 0x5a, 0x93, 0xe3, 0xea, 0x84, 0xa7, 0x2e, 0x1c, 0xe7, 0xcb, 0xb8, 0x36, 0x6e, 0x8e, 0xa2, 0xa6, 0x3e, 0x3a, 0xfc, 0x3c, 0x4e, 0x68, 0x8b, 0xb9, 0xff, 0xde, 0x7a, 0x2d, 0x7a, 0x0a, 0xc4, 0x7e, 0x31, 0x91, 0x8f, 0x49, 0xf7, 0x4f, 0x91, 0x7a, 0x1e, 0xbf, 0x57, 0x18, 
+[1775291224.455] [33220:33223] [DMG] 					] (248 bytes)
+[1775291224.455] [33220:33223] [DMG] 					0xfe = 2 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 				},
+[1775291224.455] [33220:33223] [DMG] 			},
+[1775291224.455] [33220:33223] [DMG] 			
+[1775291224.455] [33220:33223] [DMG] 		},
+[1775291224.455] [33220:33223] [DMG] 		
+[1775291224.455] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.455] [33220:33223] [DMG] 		{
+[1775291224.455] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.455] [33220:33223] [DMG] 			{
+[1775291224.455] [33220:33223] [DMG] 				DataVersion = 0xdf2b62e7,
+[1775291224.455] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.455] [33220:33223] [DMG] 				{
+[1775291224.455] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.455] [33220:33223] [DMG] 					Cluster = 0x3e,
+[1775291224.455] [33220:33223] [DMG] 					Attribute = 0x0000_0001,
+[1775291224.455] [33220:33223] [DMG] 				}
+[1775291224.455] [33220:33223] [DMG] 					
+[1775291224.455] [33220:33223] [DMG] 				Data = [
+[1775291224.455] [33220:33223] [DMG] 						
+[1775291224.455] [33220:33223] [DMG] 					{
+[1775291224.455] [33220:33223] [DMG] 						0x1 = [
+[1775291224.455] [33220:33223] [DMG] 								0x04, 0xe0, 0x92, 0xb8, 0xb1, 0xfe, 0x7d, 0x9d, 0x83, 0x04, 0x5d, 0x5c, 0x82, 0xfe, 0x86, 0x9b, 0x9f, 0xe0, 0x93, 0x6f, 0x1e, 0x23, 0xb9, 0x1d, 0x7c, 0x7f, 0xc4, 0x1d, 0xd9, 0x3d, 0xa2, 0xa5, 0xc8, 0xd4, 0x8a, 0x79, 0x09, 0xf2, 0xce, 0xfb, 0x7a, 0x25, 0x04, 0xc4, 0x26, 0x59, 0x8f, 0xb6, 0x3f, 0x74, 0xe6, 0xca, 0x4f, 0x4a, 0x7e, 0xf1, 0x42, 0x1d, 0xef, 0x68, 0x6b, 0x3a, 0x88, 0x9b, 0x1d, 
+[1775291224.455] [33220:33223] [DMG] 						] (65 bytes)
+[1775291224.455] [33220:33223] [DMG] 						0x2 = 65521 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 						0x3 = 1 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 						0x4 = 18446744004990074879 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 						0x5 = "" (0 chars), 
+[1775291224.455] [33220:33223] [DMG] 						0xfe = 1 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 					},
+[1775291224.455] [33220:33223] [DMG] 					{
+[1775291224.455] [33220:33223] [DMG] 						0x1 = [
+[1775291224.455] [33220:33223] [DMG] 								0x04, 0x7f, 0xa9, 0x00, 0x2b, 0x42, 0x9c, 0x00, 0xdb, 0xc2, 0xb2, 0x15, 0x31, 0x1c, 0x41, 0xa1, 0x51, 0xb8, 0x10, 0x2f, 0xb1, 0x6c, 0xbc, 0x6d, 0x07, 0x77, 0x66, 0x36, 0xf8, 0x9e, 0xaf, 0x60, 0x6a, 0x22, 0x3d, 0x95, 0xc0, 0x45, 0xc4, 0xa8, 0x6c, 0x77, 0x99, 0xf4, 0xf7, 0x78, 0xce, 0x12, 0xac, 0xa5, 0xc1, 0xf6, 0xfe, 0xd6, 0x67, 0xd6, 0xe7, 0x58, 0xf0, 0x2d, 0xab, 0x74, 0x78, 0x72, 0x74, 
+[1775291224.455] [33220:33223] [DMG] 						] (65 bytes)
+[1775291224.455] [33220:33223] [DMG] 						0x2 = 65522 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 						0x3 = 1 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 						0x4 = 11 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 						0x5 = "" (0 chars), 
+[1775291224.455] [33220:33223] [DMG] 						0xfe = 2 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 					},
+[1775291224.455] [33220:33223] [DMG] 				],
+[1775291224.455] [33220:33223] [DMG] 			},
+[1775291224.455] [33220:33223] [DMG] 			
+[1775291224.455] [33220:33223] [DMG] 		},
+[1775291224.455] [33220:33223] [DMG] 		
+[1775291224.455] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.455] [33220:33223] [DMG] 		{
+[1775291224.455] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.455] [33220:33223] [DMG] 			{
+[1775291224.455] [33220:33223] [DMG] 				DataVersion = 0x236eb4c,
+[1775291224.455] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.455] [33220:33223] [DMG] 				{
+[1775291224.455] [33220:33223] [DMG] 					Endpoint = 0x1,
+[1775291224.455] [33220:33223] [DMG] 					Cluster = 0x753,
+[1775291224.455] [33220:33223] [DMG] 					Attribute = 0x0000_0000,
+[1775291224.455] [33220:33223] [DMG] 				}
+[1775291224.455] [33220:33223] [DMG] 					
+[1775291224.455] [33220:33223] [DMG] 				Data = 2 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 			},
+[1775291224.455] [33220:33223] [DMG] 			
+[1775291224.455] [33220:33223] [DMG] 		},
+[1775291224.455] [33220:33223] [DMG] 		
+[1775291224.455] [33220:33223] [DMG] 		AttributeReportIB =
+[1775291224.455] [33220:33223] [DMG] 		{
+[1775291224.455] [33220:33223] [DMG] 			AttributeDataIB =
+[1775291224.455] [33220:33223] [DMG] 			{
+[1775291224.455] [33220:33223] [DMG] 				DataVersion = 0xd4fcf64d,
+[1775291224.455] [33220:33223] [DMG] 				AttributePathIB =
+[1775291224.455] [33220:33223] [DMG] 				{
+[1775291224.455] [33220:33223] [DMG] 					Endpoint = 0x0,
+[1775291224.455] [33220:33223] [DMG] 					Cluster = 0x31,
+[1775291224.455] [33220:33223] [DMG] 					Attribute = 0x0000_FFFC,
+[1775291224.455] [33220:33223] [DMG] 				}
+[1775291224.455] [33220:33223] [DMG] 					
+[1775291224.455] [33220:33223] [DMG] 				Data = 4 (unsigned), 
+[1775291224.455] [33220:33223] [DMG] 			},
+[1775291224.455] [33220:33223] [DMG] 			
+[1775291224.455] [33220:33223] [DMG] 		},
+[1775291224.455] [33220:33223] [DMG] 		
+[1775291224.455] [33220:33223] [DMG] 	],
+[1775291224.455] [33220:33223] [DMG] 	
+[1775291224.455] [33220:33223] [DMG] 	SuppressResponse = true, 
+[1775291224.455] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.455] [33220:33223] [DMG] }
+[1775291224.456] [33220:33223] [CTL] NetworkCommissioning Features: has Ethernet. endpointid = 0
+[1775291224.456] [33220:33223] [CTL] DeviceCommissioner::OnDone - fabric.vendorId=0xFFF1 fabric.fabricId=0x0000000000000001 fabric.nodeId=0xFFFFFFEFFFFFFFFF
+[1775291224.456] [33220:33223] [CTL] DeviceCommissioner::OnDone - found a matching fabric id
+[1775291224.456] [33220:33223] [CTL] DeviceCommissioner::OnDone - fabric.vendorId=0xFFF2 fabric.fabricId=0x0000000000000001 fabric.nodeId=0x000000000000000B
+[1775291224.456] [33220:33223] [CTL] DeviceCommissioner::OnDone - found a matching fabric id
+[1775291224.456] [33220:33223] [CTL] JCM: AdministratorFabricIndex: 2
+[1775291224.456] [33220:33223] [CTL] JCM: Successfully parsed the Administrator Fabric Index and Endpoint ID
+[1775291224.456] [33220:33223] [CTL] JCM: Successfully parsed the Administrator NOC and ICAC
+[1775291224.456] [33220:33223] [CTL] JCM: Successfully parsed the Administrator Fabric Table
+[1775291224.456] [33220:33223] [CTL] JCM: Successfully parsed the Operational Credentials
+[1775291224.456] [33220:33223] [SVR] OnReadCommissioningInfo - vendorId=0xFFF1 productId=0x8001
+[1775291224.456] [33220:33223] [SVR] OnReadCommissioningInfo ICD - IdleModeDuration=0 activeModeDuration=0 activeModeThreshold=0
+[1775291224.456] [33220:33223] [CTL] Successfully finished commissioning step 'ReadCommissioningInfo'
+[1775291224.456] [33220:33223] [CTL] Commissioning stage next step: 'ReadCommissioningInfo' -> 'ArmFailSafe'
+[1775291224.456] [33220:33223] [CTL] Performing next commissioning step 'ArmFailSafe'
+[1775291224.456] [33220:33223] [CTL] Arming failsafe (60 seconds)
+[1775291224.456] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.456] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.456] [33220:33223] [EM] <<< [E:48955i S:4179 M:102879908] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:65)
+[1775291224.456] [33220:33223] [EM] ??1 [E:48955i S:4179 M:102879908] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 332ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.456] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.456] [33220:33223] [EM] <<< [E:48954i S:4179 M:102879909 (Ack:252593189)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.456] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593189 on exchange 48954i
+[1775291224.457] [33220:33223] [EM] >>> [E:48955i S:4179 M:252593190 (Ack:102879908)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)
+[1775291224.457] [33220:33223] [EM] Found matching exchange: 48955i, Delegate: 0x7b77c001d1b8
+[1775291224.457] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879908 from Retrans Table on exchange 48955i
+[1775291224.457] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.457] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.457] [33220:33223] [DMG] {
+[1775291224.457] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.457] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.457] [33220:33223] [DMG] 	[
+[1775291224.457] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.457] [33220:33223] [DMG] 		{
+[1775291224.457] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.457] [33220:33223] [DMG] 			{
+[1775291224.457] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.457] [33220:33223] [DMG] 				{
+[1775291224.457] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.457] [33220:33223] [DMG] 					ClusterId = 0x30,
+[1775291224.457] [33220:33223] [DMG] 					CommandId = 0x1,
+[1775291224.457] [33220:33223] [DMG] 				},
+[1775291224.457] [33220:33223] [DMG] 				
+[1775291224.457] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.457] [33220:33223] [DMG] 				{
+[1775291224.457] [33220:33223] [DMG] 					0x0 = 0 (unsigned), 
+[1775291224.457] [33220:33223] [DMG] 					0x1 = "" (0 chars), 
+[1775291224.457] [33220:33223] [DMG] 				},
+[1775291224.457] [33220:33223] [DMG] 			},
+[1775291224.457] [33220:33223] [DMG] 			
+[1775291224.457] [33220:33223] [DMG] 		},
+[1775291224.457] [33220:33223] [DMG] 		
+[1775291224.457] [33220:33223] [DMG] 	],
+[1775291224.457] [33220:33223] [DMG] 	
+[1775291224.457] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.457] [33220:33223] [DMG] },
+[1775291224.457] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_0030 Command=0x0000_0001
+[1775291224.457] [33220:33223] [CTL] Received ArmFailSafe response errorCode=0
+[1775291224.457] [33220:33223] [CTL] Successfully finished commissioning step 'ArmFailSafe'
+[1775291224.457] [33220:33223] [CTL] Commissioning stage next step: 'ArmFailSafe' -> 'ConfigRegulatory'
+[1775291224.457] [33220:33223] [CTL] Performing next commissioning step 'ConfigRegulatory'
+[1775291224.457] [33220:33223] [CTL] Setting Regulatory Config
+[1775291224.457] [33220:33223] [CTL] No regulatory config supplied by controller, leaving as device default (0)
+[1775291224.457] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.457] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.457] [33220:33223] [EM] <<< [E:48956i S:4179 M:102879910] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:70)
+[1775291224.457] [33220:33223] [EM] ??1 [E:48956i S:4179 M:102879910] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 371ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.457] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.457] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.457] [33220:33223] [EM] <<< [E:48955i S:4179 M:102879911 (Ack:252593190)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.457] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593190 on exchange 48955i
+[1775291224.463] [33220:33223] [EM] >>> [E:48956i S:4179 M:252593191 (Ack:102879910)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)
+[1775291224.463] [33220:33223] [EM] Found matching exchange: 48956i, Delegate: 0x7b77c001c3f8
+[1775291224.463] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879910 from Retrans Table on exchange 48956i
+[1775291224.463] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.463] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.463] [33220:33223] [DMG] {
+[1775291224.463] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.463] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.463] [33220:33223] [DMG] 	[
+[1775291224.463] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.463] [33220:33223] [DMG] 		{
+[1775291224.463] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.463] [33220:33223] [DMG] 			{
+[1775291224.463] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.463] [33220:33223] [DMG] 				{
+[1775291224.463] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.463] [33220:33223] [DMG] 					ClusterId = 0x30,
+[1775291224.463] [33220:33223] [DMG] 					CommandId = 0x3,
+[1775291224.463] [33220:33223] [DMG] 				},
+[1775291224.463] [33220:33223] [DMG] 				
+[1775291224.463] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.463] [33220:33223] [DMG] 				{
+[1775291224.463] [33220:33223] [DMG] 					0x0 = 0 (unsigned), 
+[1775291224.463] [33220:33223] [DMG] 					0x1 = "" (0 chars), 
+[1775291224.463] [33220:33223] [DMG] 				},
+[1775291224.463] [33220:33223] [DMG] 			},
+[1775291224.463] [33220:33223] [DMG] 			
+[1775291224.463] [33220:33223] [DMG] 		},
+[1775291224.463] [33220:33223] [DMG] 		
+[1775291224.463] [33220:33223] [DMG] 	],
+[1775291224.463] [33220:33223] [DMG] 	
+[1775291224.463] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.463] [33220:33223] [DMG] },
+[1775291224.463] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_0030 Command=0x0000_0003
+[1775291224.463] [33220:33223] [CTL] Received SetRegulatoryConfig response errorCode=0
+[1775291224.463] [33220:33223] [CTL] Successfully finished commissioning step 'ConfigRegulatory'
+[1775291224.463] [33220:33223] [CTL] Commissioning stage next step: 'ConfigRegulatory' -> 'ConfigureTCAcknowledgments'
+[1775291224.463] [33220:33223] [CTL] Performing next commissioning step 'ConfigureTCAcknowledgments'
+[1775291224.463] [33220:33223] [CTL] Setting Terms and Conditions
+[1775291224.463] [33220:33223] [CTL] Setting Terms and Conditions: Skipped
+[1775291224.463] [33220:33223] [CTL] Successfully finished commissioning step 'ConfigureTCAcknowledgments'
+[1775291224.463] [33220:33223] [CTL] Commissioning stage next step: 'ConfigureTCAcknowledgments' -> 'SendPAICertificateRequest'
+[1775291224.463] [33220:33223] [CTL] Performing next commissioning step 'SendPAICertificateRequest'
+[1775291224.463] [33220:33223] [CTL] Sending request for PAI certificate
+[1775291224.463] [33220:33223] [CTL] Sending Certificate Chain request to 0x7b77c003b880 device
+[1775291224.463] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.463] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.463] [33220:33223] [EM] <<< [E:48957i S:4179 M:102879912] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:62)
+[1775291224.463] [33220:33223] [EM] ??1 [E:48957i S:4179 M:102879912] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 359ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.464] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.464] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.464] [33220:33223] [EM] <<< [E:48956i S:4179 M:102879913 (Ack:252593191)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.464] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593191 on exchange 48956i
+[1775291224.464] [33220:33223] [EM] >>> [E:48957i S:4179 M:252593192 (Ack:102879912)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:531)
+[1775291224.464] [33220:33223] [EM] Found matching exchange: 48957i, Delegate: 0x7b77c001d1b8
+[1775291224.464] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879912 from Retrans Table on exchange 48957i
+[1775291224.464] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.464] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.464] [33220:33223] [DMG] {
+[1775291224.464] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.464] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.464] [33220:33223] [DMG] 	[
+[1775291224.464] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.464] [33220:33223] [DMG] 		{
+[1775291224.464] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.464] [33220:33223] [DMG] 			{
+[1775291224.464] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.464] [33220:33223] [DMG] 				{
+[1775291224.464] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.464] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.464] [33220:33223] [DMG] 					CommandId = 0x3,
+[1775291224.464] [33220:33223] [DMG] 				},
+[1775291224.464] [33220:33223] [DMG] 				
+[1775291224.465] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.465] [33220:33223] [DMG] 				{
+[1775291224.465] [33220:33223] [DMG] 					0x0 = [
+[1775291224.465] [33220:33223] [DMG] 							0x30, 0x82, 0x01, 0xcb, 0x30, 0x82, 0x01, 0x71, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x08, 0x56, 0xad, 0x82, 0x22, 0xad, 0x94, 0x5b, 0x64, 0x30, 0x0a, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x04, 0x03, 0x02, 0x30, 0x30, 0x31, 0x18, 0x30, 0x16, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0c, 0x0f, 0x4d, 0x61, 0x74, 0x74, 0x65, 0x72, 0x20, 0x54, 0x65, 0x73, 0x74, 0x20, 0x50, 0x41, 0x41, 0x31, 0x14, 0x30, 0x12, 0x06, 0x0a, 0x2b, 0x06, 0x01, 0x04, 0x01, 0x82, 0xa2, 0x7c, 0x02, 0x01, 0x0c, 0x04, 0x46, 0x46, 0x46, 0x31, 0x30, 0x20, 0x17, 0x0d, 0x32, 0x32, 0x30, 0x32, 0x30, 0x35, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x5a, 0x18, 0x0f, 0x39, 0x39, 0x39, 0x39, 0x31, 0x32, 0x33, 0x31, 0x32, 0x33, 0x35, 0x39, 0x35, 0x39, 0x5a, 0x30, 0x3d, 0x31, 0x25, 0x30, 0x23, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0c, 0x1c, 0x4d, 0x61, 0x74, 0x74, 0x65, 0x72, 0x20, 0x44, 0x65, 0x76, 0x20, 0x50, 0x41, 0x49, 0x20, 0x30, 0x78, 0x46, 0x46, 0x46, 0x31, 0x20, 0x6e, 0x6f, 0x20, 0x50, 0x49, 0x44, 0x31, 0x14, 0x30, 0x12, 0x06, 0x0a, 0x2b, 0x06, 0x01, 0x04, 0x01, 0x82, 0xa2, 0x7c, 0x02, 0x01, 0x0c, 0x04, 0x46, 0x46, 0x46, 0x31, 0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00, 0x04, 0x41, 0x9a, 0x93, 0x15, 0xc2, 0x17, 0x3e, 0x0c, 0x8c, 0x87, 0x6d, 0x03, 0xcc, 0xfc, 0x94, 0x48, 0x52, 0x64, 0x7f, 0x7f, 0xec, 0x5e, 0x50, 0x82, 0xf4, 0x05, 0x99, 0x28, 0xec, 0xa8, 0x94, 0xc5, 0x94, 0x15, 0x13, 0x09, 0xac, 0x63, 0x1e, 0x4c, 0xb0, 0x33, 0x92, 0xaf, 0x68, 0x4b, 0x0b, 0xaf, 0xb7, 0xe6, 0x5b, 0x3b, 0x81, 0x62, 0xc2, 0xf5, 0x2b, 0xf9, 0x31, 0xb8, 0xe7, 0x7a, 0xaa, 0x82, 0xa3, 0x66, 0x30, 0x64, 0x30, 0x12, 0x06, 0x03, 0x55, 0x1d, 0x
+[1775291224.465] [33220:33223] [DMG] 					] (463 bytes)
+[1775291224.465] [33220:33223] [DMG] 				},
+[1775291224.465] [33220:33223] [DMG] 			},
+[1775291224.465] [33220:33223] [DMG] 			
+[1775291224.465] [33220:33223] [DMG] 		},
+[1775291224.465] [33220:33223] [DMG] 		
+[1775291224.465] [33220:33223] [DMG] 	],
+[1775291224.465] [33220:33223] [DMG] 	
+[1775291224.465] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.465] [33220:33223] [DMG] },
+[1775291224.465] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_003E Command=0x0000_0003
+[1775291224.465] [33220:33223] [CTL] Received certificate chain from the device
+[1775291224.465] [33220:33223] [CTL] Successfully finished commissioning step 'SendPAICertificateRequest'
+[1775291224.465] [33220:33223] [CTL] Commissioning stage next step: 'SendPAICertificateRequest' -> 'SendDACCertificateRequest'
+[1775291224.465] [33220:33223] [CTL] Performing next commissioning step 'SendDACCertificateRequest'
+[1775291224.465] [33220:33223] [CTL] Sending request for DAC certificate
+[1775291224.465] [33220:33223] [CTL] Sending Certificate Chain request to 0x7b77c003b880 device
+[1775291224.465] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.465] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.465] [33220:33223] [EM] <<< [E:48958i S:4179 M:102879914] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:62)
+[1775291224.465] [33220:33223] [EM] ??1 [E:48958i S:4179 M:102879914] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 409ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.465] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.465] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.465] [33220:33223] [EM] <<< [E:48957i S:4179 M:102879915 (Ack:252593192)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.465] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593192 on exchange 48957i
+[1775291224.468] [33220:33223] [EM] >>> [E:48958i S:4179 M:252593193 (Ack:102879914)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:559)
+[1775291224.468] [33220:33223] [EM] Found matching exchange: 48958i, Delegate: 0x7b77c001c3f8
+[1775291224.468] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879914 from Retrans Table on exchange 48958i
+[1775291224.468] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.468] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.468] [33220:33223] [DMG] {
+[1775291224.468] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.468] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.468] [33220:33223] [DMG] 	[
+[1775291224.468] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.468] [33220:33223] [DMG] 		{
+[1775291224.468] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.468] [33220:33223] [DMG] 			{
+[1775291224.468] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.468] [33220:33223] [DMG] 				{
+[1775291224.468] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.468] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.468] [33220:33223] [DMG] 					CommandId = 0x3,
+[1775291224.468] [33220:33223] [DMG] 				},
+[1775291224.468] [33220:33223] [DMG] 				
+[1775291224.468] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.469] [33220:33223] [DMG] 				{
+[1775291224.469] [33220:33223] [DMG] 					0x0 = [
+[1775291224.469] [33220:33223] [DMG] 							0x30, 0x82, 0x01, 0xe7, 0x30, 0x82, 0x01, 0x8e, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x08, 0x69, 0xcd, 0xf1, 0x0d, 0xe9, 0xe5, 0x4e, 0xd1, 0x30, 0x0a, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x04, 0x03, 0x02, 0x30, 0x3d, 0x31, 0x25, 0x30, 0x23, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0c, 0x1c, 0x4d, 0x61, 0x74, 0x74, 0x65, 0x72, 0x20, 0x44, 0x65, 0x76, 0x20, 0x50, 0x41, 0x49, 0x20, 0x30, 0x78, 0x46, 0x46, 0x46, 0x31, 0x20, 0x6e, 0x6f, 0x20, 0x50, 0x49, 0x44, 0x31, 0x14, 0x30, 0x12, 0x06, 0x0a, 0x2b, 0x06, 0x01, 0x04, 0x01, 0x82, 0xa2, 0x7c, 0x02, 0x01, 0x0c, 0x04, 0x46, 0x46, 0x46, 0x31, 0x30, 0x20, 0x17, 0x0d, 0x32, 0x32, 0x30, 0x32, 0x30, 0x35, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x5a, 0x18, 0x0f, 0x39, 0x39, 0x39, 0x39, 0x31, 0x32, 0x33, 0x31, 0x32, 0x33, 0x35, 0x39, 0x35, 0x39, 0x5a, 0x30, 0x53, 0x31, 0x25, 0x30, 0x23, 0x06, 0x03, 0x55, 0x04, 0x03, 0x0c, 0x1c, 0x4d, 0x61, 0x74, 0x74, 0x65, 0x72, 0x20, 0x44, 0x65, 0x76, 0x20, 0x44, 0x41, 0x43, 0x20, 0x30, 0x78, 0x46, 0x46, 0x46, 0x31, 0x2f, 0x30, 0x78, 0x38, 0x30, 0x30, 0x31, 0x31, 0x14, 0x30, 0x12, 0x06, 0x0a, 0x2b, 0x06, 0x01, 0x04, 0x01, 0x82, 0xa2, 0x7c, 0x02, 0x01, 0x0c, 0x04, 0x46, 0x46, 0x46, 0x31, 0x31, 0x14, 0x30, 0x12, 0x06, 0x0a, 0x2b, 0x06, 0x01, 0x04, 0x01, 0x82, 0xa2, 0x7c, 0x02, 0x02, 0x0c, 0x04, 0x38, 0x30, 0x30, 0x31, 0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00, 0x04, 0x46, 0x3a, 0xc6, 0x93, 0x42, 0x91, 0x0a, 0x0e, 0x55, 0x88, 0xfc, 0x6f, 0xf5, 0x6b, 0xb6, 0x3e, 0x62, 0xec, 0xce, 0xcb, 0x14, 0x8f, 0x7d, 0x4e, 0xb0, 0x3e, 0xe5, 0x52, 0x60, 0x14, 0x15, 0x76, 0x7d, 0x16, 0xa5, 0xc6, 0x63, 0xf7, 0x93, 0x
+[1775291224.469] [33220:33223] [DMG] 					] (491 bytes)
+[1775291224.469] [33220:33223] [DMG] 				},
+[1775291224.469] [33220:33223] [DMG] 			},
+[1775291224.469] [33220:33223] [DMG] 			
+[1775291224.469] [33220:33223] [DMG] 		},
+[1775291224.469] [33220:33223] [DMG] 		
+[1775291224.469] [33220:33223] [DMG] 	],
+[1775291224.469] [33220:33223] [DMG] 	
+[1775291224.469] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.469] [33220:33223] [DMG] },
+[1775291224.469] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_003E Command=0x0000_0003
+[1775291224.469] [33220:33223] [CTL] Received certificate chain from the device
+[1775291224.469] [33220:33223] [CTL] Successfully finished commissioning step 'SendDACCertificateRequest'
+[1775291224.469] [33220:33223] [CTL] Commissioning stage next step: 'SendDACCertificateRequest' -> 'SendAttestationRequest'
+[1775291224.469] [33220:33223] [CTL] Performing next commissioning step 'SendAttestationRequest'
+[1775291224.469] [33220:33223] [CTL] Sending Attestation Request to the device.
+[1775291224.469] [33220:33223] [CTL] Sending Attestation request to 0x7b77c003b880 device
+[1775291224.469] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.469] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.469] [33220:33223] [EM] <<< [E:48959i S:4179 M:102879916] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:94)
+[1775291224.469] [33220:33223] [EM] ??1 [E:48959i S:4179 M:102879916] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 364ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.469] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.469] [33220:33223] [CTL] Sent Attestation request, waiting for the Attestation Information
+[1775291224.469] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.469] [33220:33223] [EM] <<< [E:48958i S:4179 M:102879917 (Ack:252593193)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.469] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593193 on exchange 48958i
+[1775291224.470] [33220:33223] [EM] >>> [E:48959i S:4179 M:252593194 (Ack:102879916)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:718)
+[1775291224.470] [33220:33223] [EM] Found matching exchange: 48959i, Delegate: 0x7b77c001d1b8
+[1775291224.470] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879916 from Retrans Table on exchange 48959i
+[1775291224.470] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.470] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.470] [33220:33223] [DMG] {
+[1775291224.470] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.470] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.470] [33220:33223] [DMG] 	[
+[1775291224.470] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.470] [33220:33223] [DMG] 		{
+[1775291224.470] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.470] [33220:33223] [DMG] 			{
+[1775291224.470] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.470] [33220:33223] [DMG] 				{
+[1775291224.470] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.470] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.470] [33220:33223] [DMG] 					CommandId = 0x1,
+[1775291224.470] [33220:33223] [DMG] 				},
+[1775291224.470] [33220:33223] [DMG] 				
+[1775291224.470] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.470] [33220:33223] [DMG] 				{
+[1775291224.470] [33220:33223] [DMG] 					0x0 = [
+[1775291224.470] [33220:33223] [DMG] 							0x15, 0x31, 0x01, 0x1b, 0x02, 0x30, 0x82, 0x02, 0x17, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x07, 0x02, 0xa0, 0x82, 0x02, 0x08, 0x30, 0x82, 0x02, 0x04, 0x02, 0x01, 0x03, 0x31, 0x0d, 0x30, 0x0b, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x01, 0x30, 0x82, 0x01, 0x70, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x07, 0x01, 0xa0, 0x82, 0x01, 0x61, 0x04, 0x82, 0x01, 0x5d, 0x15, 0x24, 0x00, 0x01, 0x25, 0x01, 0xf1, 0xff, 0x36, 0x02, 0x05, 0x00, 0x80, 0x05, 0x01, 0x80, 0x05, 0x02, 0x80, 0x05, 0x03, 0x80, 0x05, 0x04, 0x80, 0x05, 0x05, 0x80, 0x05, 0x06, 0x80, 0x05, 0x07, 0x80, 0x05, 0x08, 0x80, 0x05, 0x09, 0x80, 0x05, 0x0a, 0x80, 0x05, 0x0b, 0x80, 0x05, 0x0c, 0x80, 0x05, 0x0d, 0x80, 0x05, 0x0e, 0x80, 0x05, 0x0f, 0x80, 0x05, 0x10, 0x80, 0x05, 0x11, 0x80, 0x05, 0x12, 0x80, 0x05, 0x13, 0x80, 0x05, 0x14, 0x80, 0x05, 0x15, 0x80, 0x05, 0x16, 0x80, 0x05, 0x17, 0x80, 0x05, 0x18, 0x80, 0x05, 0x19, 0x80, 0x05, 0x1a, 0x80, 0x05, 0x1b, 0x80, 0x05, 0x1c, 0x80, 0x05, 0x1d, 0x80, 0x05, 0x1e, 0x80, 0x05, 0x1f, 0x80, 0x05, 0x20, 0x80, 0x05, 0x21, 0x80, 0x05, 0x22, 0x80, 0x05, 0x23, 0x80, 0x05, 0x24, 0x80, 0x05, 0x25, 0x80, 0x05, 0x26, 0x80, 0x05, 0x27, 0x80, 0x05, 0x28, 0x80, 0x05, 0x29, 0x80, 0x05, 0x2a, 0x80, 0x05, 0x2b, 0x80, 0x05, 0x2c, 0x80, 0x05, 0x2d, 0x80, 0x05, 0x2e, 0x80, 0x05, 0x2f, 0x80, 0x05, 0x30, 0x80, 0x05, 0x31, 0x80, 0x05, 0x32, 0x80, 0x05, 0x33, 0x80, 0x05, 0x34, 0x80, 0x05, 0x35, 0x80, 0x05, 0x36, 0x80, 0x05, 0x37, 0x80, 0x05, 0x38, 0x80, 0x05, 0x39, 0x80, 0x05, 0x3a, 0x80, 0x05, 0x3b, 0x80, 0x05, 0x3c, 0x80, 0x05, 0x3d, 0x80, 0x05, 0x3e, 0x80, 0x05, 0x3f, 0x80, 0x05, 0x40, 0x80, 0x05, 0x41, 0x80, 0x05, 0x42, 0x80, 0x05, 0x43, 0x80, 0x
+[1775291224.470] [33220:33223] [DMG] 					] (583 bytes)
+[1775291224.470] [33220:33223] [DMG] 					0x1 = [
+[1775291224.470] [33220:33223] [DMG] 							0xb5, 0x71, 0x3f, 0x7f, 0x28, 0xf2, 0xf7, 0x97, 0xac, 0x80, 0x3e, 0xaf, 0x6c, 0x46, 0x34, 0x9a, 0xfb, 0x46, 0x78, 0xf0, 0xbb, 0xd3, 0x13, 0x4b, 0x37, 0x55, 0xf1, 0x4a, 0xd4, 0x43, 0xa2, 0xf7, 0xbd, 0x76, 0x61, 0xe7, 0x9a, 0xcc, 0xb5, 0x84, 0x8e, 0xf7, 0x6e, 0x31, 0xdf, 0x12, 0x54, 0x9a, 0x52, 0x6e, 0xa5, 0x51, 0x95, 0x47, 0x29, 0x85, 0x43, 0xd9, 0xe7, 0xa6, 0x9a, 0xea, 0x8e, 0xcc, 
+[1775291224.470] [33220:33223] [DMG] 					] (64 bytes)
+[1775291224.470] [33220:33223] [DMG] 				},
+[1775291224.470] [33220:33223] [DMG] 			},
+[1775291224.470] [33220:33223] [DMG] 			
+[1775291224.470] [33220:33223] [DMG] 		},
+[1775291224.470] [33220:33223] [DMG] 		
+[1775291224.470] [33220:33223] [DMG] 	],
+[1775291224.470] [33220:33223] [DMG] 	
+[1775291224.470] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.470] [33220:33223] [DMG] },
+[1775291224.470] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_003E Command=0x0000_0001
+[1775291224.470] [33220:33223] [CTL] Received Attestation Information from the device
+[1775291224.470] [33220:33223] [CTL] Successfully finished commissioning step 'SendAttestationRequest'
+[1775291224.470] [33220:33223] [CTL] AutoCommissioner setting attestationElements buffer size 583/583
+[1775291224.470] [33220:33223] [CTL] Commissioning stage next step: 'SendAttestationRequest' -> 'AttestationVerification'
+[1775291224.470] [33220:33223] [CTL] Performing next commissioning step 'AttestationVerification'
+[1775291224.470] [33220:33223] [CTL] Verifying Device Attestation information received from the device
+[1775291224.477] [33220:33223] [-] Certification type 0
+[1775291224.477] [33220:33223] [CTL] Successfully finished commissioning step 'AttestationVerification'
+[1775291224.477] [33220:33223] [CTL] Commissioning stage next step: 'AttestationVerification' -> 'AttestationRevocationCheck'
+[1775291224.477] [33220:33223] [CTL] Performing next commissioning step 'AttestationRevocationCheck'
+[1775291224.477] [33220:33223] [CTL] Verifying the device's DAC chain revocation status
+[1775291224.477] [33220:33223] [-] WARNING: No revocation delegate available. Revocation checks will be skipped!
+[1775291224.477] [33220:33223] [CTL] Successfully validated 'Attestation Information' command received from the device.
+[1775291224.477] [33220:33223] [CTL] Successfully finished commissioning step 'AttestationRevocationCheck'
+[1775291224.477] [33220:33223] [CTL] Commissioning stage next step: 'AttestationRevocationCheck' -> 'JCMTrustVerification'
+[1775291224.477] [33220:33223] [CTL] Performing next commissioning step 'JCMTrustVerification'
+[1775291224.477] [33220:33223] [CTL] JCM: Starting Trust Verification
+[1775291224.477] [33220:33223] [CTL] JCM: Trust Verification Stage Finished: IDLE
+[1775291224.477] [33220:33223] [CTL] JCM: Trust Verification progress: 0
+[1775291224.477] [33220:33223] [CTL] JCM: Verify joint fabric administrator endpoint and fabric index
+[1775291224.477] [33220:33223] [CTL] JCM: Administrator endpoint ID: 1
+[1775291224.477] [33220:33223] [CTL] JCM: Administrator fabric index: 2
+[1775291224.477] [33220:33223] [CTL] JCM: Administrator vendor ID: 65522
+[1775291224.477] [33220:33223] [CTL] JCM: Administrator fabric ID: 1
+[1775291224.477] [33220:33223] [CTL] JCM: Trust Verification Stage Finished: VERIFYING_ADMINISTRATOR_INFORMATION
+[1775291224.477] [33220:33223] [CTL] JCM: Trust Verification progress: 1
+[1775291224.477] [33220:33223] [CTL] Performing vendor ID verification for vendor ID: 65522
+[1775291224.477] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.477] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.477] [33220:33223] [EM] <<< [E:48960i S:4179 M:102879918] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:97)
+[1775291224.477] [33220:33223] [EM] ??1 [E:48960i S:4179 M:102879918] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 400ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.477] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.477] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.477] [33220:33223] [EM] <<< [E:48959i S:4179 M:102879919 (Ack:252593194)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.477] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593194 on exchange 48959i
+[1775291224.478] [33220:33223] [EM] >>> [E:48960i S:4179 M:252593195 (Ack:102879918)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:137)
+[1775291224.478] [33220:33223] [EM] Found matching exchange: 48960i, Delegate: 0x7b77c001c3f8
+[1775291224.478] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879918 from Retrans Table on exchange 48960i
+[1775291224.478] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.478] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.478] [33220:33223] [DMG] {
+[1775291224.478] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.478] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.478] [33220:33223] [DMG] 	[
+[1775291224.478] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.478] [33220:33223] [DMG] 		{
+[1775291224.478] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.478] [33220:33223] [DMG] 			{
+[1775291224.478] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.478] [33220:33223] [DMG] 				{
+[1775291224.478] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.478] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.478] [33220:33223] [DMG] 					CommandId = 0xe,
+[1775291224.478] [33220:33223] [DMG] 				},
+[1775291224.478] [33220:33223] [DMG] 				
+[1775291224.478] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.478] [33220:33223] [DMG] 				{
+[1775291224.478] [33220:33223] [DMG] 					0x0 = 2 (unsigned), 
+[1775291224.478] [33220:33223] [DMG] 					0x1 = 1 (unsigned), 
+[1775291224.478] [33220:33223] [DMG] 					0x2 = [
+[1775291224.478] [33220:33223] [DMG] 							0xcb, 0x0b, 0x36, 0xa1, 0xbe, 0x26, 0x95, 0x5b, 0xee, 0xc3, 0xf9, 0x70, 0x16, 0x53, 0x5a, 0x65, 0x9d, 0xe6, 0xe3, 0xd6, 0xd2, 0x6e, 0xb6, 0xbe, 0xde, 0xf0, 0xb6, 0x99, 0xd5, 0x34, 0x3e, 0x67, 0x2a, 0x9a, 0xde, 0x9b, 0x53, 0xee, 0xdb, 0xf0, 0x2d, 0x07, 0x05, 0xf2, 0xd7, 0x05, 0x39, 0xbb, 0xd6, 0xd3, 0x57, 0xf7, 0xa2, 0xed, 0x9a, 0x3c, 0x46, 0x25, 0xdf, 0x7e, 0x00, 0x63, 0x3c, 0x49, 
+[1775291224.478] [33220:33223] [DMG] 					] (64 bytes)
+[1775291224.478] [33220:33223] [DMG] 				},
+[1775291224.478] [33220:33223] [DMG] 			},
+[1775291224.478] [33220:33223] [DMG] 			
+[1775291224.478] [33220:33223] [DMG] 		},
+[1775291224.478] [33220:33223] [DMG] 		
+[1775291224.478] [33220:33223] [DMG] 	],
+[1775291224.478] [33220:33223] [DMG] 	
+[1775291224.478] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.478] [33220:33223] [DMG] },
+[1775291224.478] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_003E Command=0x0000_000E
+[1775291224.478] [33220:33223] [CTL] Successfully received SignVIDVerificationResponse
+[1775291224.480] [33220:33223] [CTL] Vendor ID verification completed with result: Success
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification Stage Finished: PERFORMING_VENDOR_ID_VERIFICATION_PROCEDURE
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification progress: 2
+[1775291224.480] [33220:33223] [CTL] JCM: Asking user for consent
+[1775291224.480] [33220:33223] [CTL] Asking user for consent for vendor ID: 65522
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification Stage Finished: ASKING_USER_FOR_CONSENT
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification progress: 3
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification Stage Finished: COMPLETE
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification progress: 7
+[1775291224.480] [33220:33223] [CTL] JCM: Trust Verification already complete or error
+[1775291224.480] [33220:33223] [CTL] JCM: Administrator Device passed JCM Trust Verification
+[1775291224.480] [33220:33223] [CTL] Successfully finished commissioning step 'JCMTrustVerification'
+[1775291224.480] [33220:33223] [CTL] Commissioning stage next step: 'JCMTrustVerification' -> 'SendOpCertSigningRequest'
+[1775291224.480] [33220:33223] [CTL] Performing next commissioning step 'SendOpCertSigningRequest'
+[1775291224.480] [33220:33223] [CTL] Sending CSR request to 0x7b77c003b880 device
+[1775291224.480] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.480] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.480] [33220:33223] [EM] <<< [E:48961i S:4179 M:102879920] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:94)
+[1775291224.480] [33220:33223] [EM] ??1 [E:48961i S:4179 M:102879920] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 378ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.480] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.480] [33220:33223] [CTL] Sent CSR request, waiting for the CSR
+[1775291224.480] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.480] [33220:33223] [EM] <<< [E:48960i S:4179 M:102879921 (Ack:252593195)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.480] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593195 on exchange 48960i
+[1775291224.481] [33220:33223] [EM] >>> [E:48961i S:4179 M:252593196 (Ack:102879920)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:377)
+[1775291224.481] [33220:33223] [EM] Found matching exchange: 48961i, Delegate: 0x7b77c001d1b8
+[1775291224.481] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879920 from Retrans Table on exchange 48961i
+[1775291224.481] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.481] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.481] [33220:33223] [DMG] {
+[1775291224.481] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.481] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.481] [33220:33223] [DMG] 	[
+[1775291224.481] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.481] [33220:33223] [DMG] 		{
+[1775291224.481] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.481] [33220:33223] [DMG] 			{
+[1775291224.481] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.481] [33220:33223] [DMG] 				{
+[1775291224.481] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.481] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.481] [33220:33223] [DMG] 					CommandId = 0x5,
+[1775291224.481] [33220:33223] [DMG] 				},
+[1775291224.481] [33220:33223] [DMG] 				
+[1775291224.481] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.481] [33220:33223] [DMG] 				{
+[1775291224.481] [33220:33223] [DMG] 					0x0 = [
+[1775291224.481] [33220:33223] [DMG] 							0x15, 0x30, 0x01, 0xcb, 0x30, 0x81, 0xc8, 0x30, 0x70, 0x02, 0x01, 0x00, 0x30, 0x0e, 0x31, 0x0c, 0x30, 0x0a, 0x06, 0x03, 0x55, 0x04, 0x0a, 0x0c, 0x03, 0x43, 0x53, 0x52, 0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00, 0x04, 0xb2, 0xad, 0xa6, 0x7d, 0x42, 0x5f, 0x46, 0x19, 0x64, 0xae, 0xa3, 0x7d, 0x15, 0x1d, 0x93, 0x2b, 0x8d, 0xda, 0x7a, 0x18, 0x0e, 0x70, 0xc1, 0xc7, 0xa0, 0x1c, 0xbf, 0x48, 0x09, 0xf6, 0x2f, 0x14, 0x44, 0x85, 0xad, 0x78, 0xff, 0x81, 0xd5, 0x47, 0x2c, 0xc5, 0x5d, 0x4d, 0x1c, 0xf4, 0xab, 0xe6, 0xc1, 0x96, 0xdb, 0x14, 0x0e, 0xa5, 0xfc, 0xef, 0x4c, 0x80, 0xd9, 0xfc, 0x02, 0x4a, 0x84, 0xed, 0xa0, 0x00, 0x30, 0x0a, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x04, 0x03, 0x02, 0x03, 0x48, 0x00, 0x30, 0x45, 0x02, 0x21, 0x00, 0xec, 0x40, 0x64, 0xfd, 0x36, 0xb4, 0xb7, 0x3c, 0xb9, 0x1e, 0xca, 0x8e, 0xd0, 0x97, 0x7b, 0x04, 0x71, 0x70, 0x64, 0x2c, 0x86, 0xd2, 0xcc, 0x3a, 0x00, 0x5d, 0x6f, 0xbc, 0xd3, 0x29, 0xf3, 0xbe, 0x02, 0x20, 0x0f, 0x9b, 0x8a, 0xfb, 0xc0, 0xff, 0x35, 0x92, 0xf8, 0x3f, 0x6b, 0x34, 0x2c, 0xf5, 0x0f, 0x4f, 0x74, 0x43, 0x41, 0xef, 0x78, 0xc6, 0xd5, 0x94, 0x62, 0x0f, 0x12, 0xf3, 0xd4, 0x2e, 0x74, 0x44, 0x30, 0x02, 0x20, 0x91, 0xb0, 0x07, 0xf5, 0xc8, 0x1f, 0xa3, 0xd0, 0x0f, 0xe0, 0xf7, 0x19, 0x6b, 0xca, 0x39, 0x79, 0xc3, 0x20, 0xd5, 0x7a, 0xdd, 0x33, 0xce, 0x9d, 0x20, 0x74, 0xa6, 0x96, 0x7a, 0xaa, 0x16, 0x25, 0x18, 
+[1775291224.481] [33220:33223] [DMG] 					] (243 bytes)
+[1775291224.481] [33220:33223] [DMG] 					0x1 = [
+[1775291224.481] [33220:33223] [DMG] 							0x67, 0x7f, 0x97, 0x84, 0xbe, 0x69, 0xdf, 0xb4, 0xae, 0x03, 0x85, 0x6b, 0x7a, 0xca, 0x0b, 0x5b, 0x47, 0x2e, 0xa2, 0xb0, 0x4a, 0x18, 0x6a, 0xa0, 0xe6, 0xf5, 0x60, 0xe7, 0xd6, 0x77, 0x54, 0x97, 0x2f, 0x6d, 0xe1, 0x89, 0x9e, 0xcb, 0xe7, 0x63, 0x27, 0x8d, 0x7a, 0xe4, 0x35, 0x62, 0x4e, 0x0b, 0x21, 0x75, 0xf9, 0x10, 0xce, 0x2a, 0x84, 0xe2, 0xa5, 0x40, 0x86, 0x87, 0xe0, 0xa5, 0x41, 0x02, 
+[1775291224.481] [33220:33223] [DMG] 					] (64 bytes)
+[1775291224.481] [33220:33223] [DMG] 				},
+[1775291224.481] [33220:33223] [DMG] 			},
+[1775291224.481] [33220:33223] [DMG] 			
+[1775291224.481] [33220:33223] [DMG] 		},
+[1775291224.481] [33220:33223] [DMG] 		
+[1775291224.481] [33220:33223] [DMG] 	],
+[1775291224.481] [33220:33223] [DMG] 	
+[1775291224.481] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.481] [33220:33223] [DMG] },
+[1775291224.481] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_003E Command=0x0000_0005
+[1775291224.481] [33220:33223] [CTL] Received certificate signing request from the device
+[1775291224.481] [33220:33223] [CTL] Successfully finished commissioning step 'SendOpCertSigningRequest'
+[1775291224.481] [33220:33223] [CTL] Commissioning stage next step: 'SendOpCertSigningRequest' -> 'ValidateCSR'
+[1775291224.481] [33220:33223] [CTL] Performing next commissioning step 'ValidateCSR'
+[1775291224.482] [33220:33223] [CTL] Successfully finished commissioning step 'ValidateCSR'
+[1775291224.482] [33220:33223] [CTL] Commissioning stage next step: 'ValidateCSR' -> 'GenerateNOCChain'
+[1775291224.482] [33220:33223] [CTL] Performing next commissioning step 'GenerateNOCChain'
+[1775291224.482] [33220:33223] [CTL] Getting certificate chain for the device from the issuer
+[1775291224.483] [33220:33223] [CTL] Verifying Certificate Signing Request
+[1775291224.484] [33220:33223] [CTL] Generating NOC
+[1775291224.484] [33220:33223] [CTL] Providing certificate chain to the commissioner
+[1775291224.484] [33220:33223] [CTL] Received callback from the CA for NOC Chain generation. Status: Success
+[1775291224.484] [33220:33223] [CTL] Successfully finished commissioning step 'GenerateNOCChain'
+[1775291224.484] [33220:33223] [CTL] Performing next commissioning step 'SendTrustedRootCert'
+[1775291224.484] [33220:33223] [CTL] Sending root certificate to the device
+[1775291224.484] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.484] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.484] [33220:33223] [EM] <<< [E:48962i S:4179 M:102879922] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:293)
+[1775291224.484] [33220:33223] [EM] ??1 [E:48962i S:4179 M:102879922] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 359ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.484] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.484] [33220:33223] [CTL] Sent root certificate to the device
+[1775291224.485] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.485] [33220:33223] [EM] <<< [E:48961i S:4179 M:102879923 (Ack:252593196)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.485] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593196 on exchange 48961i
+[1775291224.486] [33220:33223] [EM] >>> [E:48962i S:4179 M:252593197 (Ack:102879922)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)
+[1775291224.486] [33220:33223] [EM] Found matching exchange: 48962i, Delegate: 0x7b77c001c3f8
+[1775291224.487] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879922 from Retrans Table on exchange 48962i
+[1775291224.487] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.487] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.487] [33220:33223] [DMG] {
+[1775291224.487] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.487] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.487] [33220:33223] [DMG] 	[
+[1775291224.487] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.487] [33220:33223] [DMG] 		{
+[1775291224.487] [33220:33223] [DMG] 			CommandStatusIB =
+[1775291224.487] [33220:33223] [DMG] 			{
+[1775291224.487] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.487] [33220:33223] [DMG] 				{
+[1775291224.487] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.487] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.487] [33220:33223] [DMG] 					CommandId = 0xb,
+[1775291224.487] [33220:33223] [DMG] 				},
+[1775291224.487] [33220:33223] [DMG] 				
+[1775291224.487] [33220:33223] [DMG] 				StatusIB =
+[1775291224.487] [33220:33223] [DMG] 				{
+[1775291224.487] [33220:33223] [DMG] 					status = 0x00 (SUCCESS),
+[1775291224.487] [33220:33223] [DMG] 				},
+[1775291224.487] [33220:33223] [DMG] 				
+[1775291224.487] [33220:33223] [DMG] 			},
+[1775291224.487] [33220:33223] [DMG] 			
+[1775291224.487] [33220:33223] [DMG] 		},
+[1775291224.487] [33220:33223] [DMG] 		
+[1775291224.487] [33220:33223] [DMG] 	],
+[1775291224.487] [33220:33223] [DMG] 	
+[1775291224.487] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.487] [33220:33223] [DMG] },
+[1775291224.487] [33220:33223] [DMG] Received Command Response Status for Endpoint=0 Cluster=0x0000_003E Command=0x0000_000B Status=0x0
+[1775291224.487] [33220:33223] [CTL] Device confirmed that it has received the root certificate
+[1775291224.488] [33220:33223] [CTL] Successfully finished commissioning step 'SendTrustedRootCert'
+[1775291224.488] [33220:33223] [CTL] Commissioning stage next step: 'SendTrustedRootCert' -> 'SendNOC'
+[1775291224.488] [33220:33223] [CTL] Performing next commissioning step 'SendNOC'
+[1775291224.488] [33220:33223] [DMG] ICR moving to [AddingComm]
+[1775291224.488] [33220:33223] [DMG] ICR moving to [AddedComma]
+[1775291224.488] [33220:33223] [EM] <<< [E:48963i S:4179 M:102879924] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0001:08 (IM:InvokeCommandRequest) (B:576)
+[1775291224.488] [33220:33223] [EM] ??1 [E:48963i S:4179 M:102879924] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 341ms from now [State:Active II:500 AI:300 AT:4000]
+[1775291224.488] [33220:33223] [DMG] ICR moving to [AwaitingRe]
+[1775291224.488] [33220:33223] [CTL] Sent operational certificate to the device
+[1775291224.488] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.488] [33220:33223] [EM] <<< [E:48962i S:4179 M:102879925 (Ack:252593197)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:[fe80::31fc:6c72:eea1:d32c%wlp2s0]:5555] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[1775291224.488] [33220:33223] [EM] Flushed pending ack for MessageCounter:252593197 on exchange 48962i
+[1775291224.503] [33220:33223] [EM] >>> [E:48963i S:4179 M:252593198 (Ack:102879924)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)
+[1775291224.503] [33220:33223] [EM] Found matching exchange: 48963i, Delegate: 0x7b77c001d1b8
+[1775291224.503] [33220:33223] [EM] Rxd Ack; Removing MessageCounter:102879924 from Retrans Table on exchange 48963i
+[1775291224.503] [33220:33223] [DMG] ICR moving to [ResponseRe]
+[1775291224.503] [33220:33223] [DMG] InvokeResponseMessage =
+[1775291224.503] [33220:33223] [DMG] {
+[1775291224.503] [33220:33223] [DMG] 	suppressResponse = false, 
+[1775291224.503] [33220:33223] [DMG] 	InvokeResponseIBs =
+[1775291224.503] [33220:33223] [DMG] 	[
+[1775291224.503] [33220:33223] [DMG] 		InvokeResponseIB =
+[1775291224.503] [33220:33223] [DMG] 		{
+[1775291224.504] [33220:33223] [DMG] 			CommandDataIB =
+[1775291224.504] [33220:33223] [DMG] 			{
+[1775291224.504] [33220:33223] [DMG] 				CommandPathIB =
+[1775291224.504] [33220:33223] [DMG] 				{
+[1775291224.504] [33220:33223] [DMG] 					EndpointId = 0x0,
+[1775291224.504] [33220:33223] [DMG] 					ClusterId = 0x3e,
+[1775291224.504] [33220:33223] [DMG] 					CommandId = 0x8,
+[1775291224.504] [33220:33223] [DMG] 				},
+[1775291224.504] [33220:33223] [DMG] 				
+[1775291224.504] [33220:33223] [DMG] 				CommandFields = 
+[1775291224.504] [33220:33223] [DMG] 				{
+[1775291224.504] [33220:33223] [DMG] 					0x0 = 0 (unsigned), 
+[1775291224.504] [33220:33223] [DMG] 					0x1 = 3 (unsigned), 
+[1775291224.504] [33220:33223] [DMG] 				},
+[1775291224.504] [33220:33223] [DMG] 			},
+[1775291224.504] [33220:33223] [DMG] 			
+[1775291224.504] [33220:33223] [DMG] 		},
+[1775291224.504] [33220:33223] [DMG] 		
+[1775291224.504] [33220:33223] [DMG] 	],
+[1775291224.504] [33220:33223] [DMG] 	
+[1775291224.504] [33220:33223] [DMG] 	InteractionModelRevision = 12
+[1775291224.504] [33220:33223] [DMG] },
+[1775291224.504] [33220:33223] [DMG] Received Command Response Data, Endpoint=0 Cluster=0x0000_003E Command=0x0000_0008
+[1775291224.504] [33220:33223] [CTL] Device returned status 0 on receiving the NOC
+[1775291224.504] [33220:33223] [CTL] Operational credentials provisioned on device 0x7b77c003b880
+[1775291224.504] [33220:33223] [TOO] Secure Pairing Success
+[1775291224.504] [33220:33223] [TOO] CASE establishment successful
+[1775291224.504] [33220:33223] [CTL] Successfully finished commissioning step 'SendNOC'
+[1775291224.504] [33220:33223] [CTL] Commissioning stage next step: 'SendNOC' -> 'Cleanup'
+[1775291224.504] [33220:33223] [CTL] Performing next commissioning step 'Cleanup'
+[1775291224.504] [33220:33223] [CTL] Successfully finished commissioning step 'Cleanup'
+[1775291224.504] [33220:33223] [IN] SecureSession[0x7b77c0007c60]: MarkForEviction Type:1 LSID:4179
+[1775291224.504] [33220:33223] [SC] SecureSession[0x7b77c0007c60, LSID:4179]: State change 'kActive' --> 'kPendingEviction'
+[1775291224.504] [33220:33223] [EM] Failed to send Solitary ack for MessageCounter:252593198 on exchange 48963i:src/messaging/ExchangeContext.cpp:99: CHIP Error 0x00000002: Connection aborted
+[1775291224.504] [33220:33223] [CTL] Commissioning complete for node ID 0x0000000000000014: success
+[1775291224.506] [33220:33221] [-] Client call 2 for 1:d030235c/63003fed completed with status OK
+[1775291224.506] [33220:33221] [JF] OnRPCTransferDone RPC call succeeded!
+[1775291224.506] [33220:33223] [DMG] ICR moving to [AwaitingDe]
+[1775291224.506] [33220:33223] [IN] SecureSession[0x7b77c0007c60]: Released - Type:1 LSID:4179
+>>> 
+
