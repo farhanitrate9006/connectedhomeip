@@ -39,11 +39,11 @@ from mobly import asserts
 
 import matter.clusters as Clusters
 from matter.testing.decorators import has_cluster, run_if_endpoint_matches
-from matter.testing.matter_testing import MatterBaseTest
+from matter.testing.matter_testing import MatterTestCommissionedDevice
 from matter.testing.runner import TestStep, default_matter_test_main
 
 
-class TC_PAVST_2_1(MatterBaseTest):
+class TC_PAVST_2_1(MatterTestCommissionedDevice):
     def desc_TC_PAVST_2_1(self) -> str:
         return "[TC-PAVST-2.1] Attributes with Server as DUT"
 
@@ -73,9 +73,9 @@ class TC_PAVST_2_1(MatterBaseTest):
             endpoint=endpoint, cluster=cluster, attribute=attr.SupportedFormats
         )
         asserts.assert_greater_equal(len(supported_formats), 1, "SupportedFormats must not be empty!")
-        for format in supported_formats:
-            validContainerformat = format.containerFormat == cluster.Enums.ContainerFormatEnum.kCmaf
-            isValidIngestMethod = format.ingestMethod == cluster.Enums.IngestMethodsEnum.kCMAFIngest
+        for fmt in supported_formats:
+            validContainerformat = fmt.containerFormat == cluster.Enums.ContainerFormatEnum.kCmaf
+            isValidIngestMethod = fmt.ingestMethod == cluster.Enums.IngestMethodsEnum.kCMAFIngest
             asserts.assert_true((validContainerformat & isValidIngestMethod),
                                 "(ContainerFormat & IngestMethod) must be defined values!")
 

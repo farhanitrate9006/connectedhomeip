@@ -45,11 +45,11 @@ import matter.clusters as Clusters
 from matter.clusters import Globals
 from matter.interaction_model import Status
 from matter.testing.decorators import async_test_body, has_cluster, run_if_endpoint_matches
-from matter.testing.matter_testing import MatterBaseTest
+from matter.testing.matter_testing import MatterTestCommissionedDevice
 from matter.testing.runner import TestStep, default_matter_test_main
 
 
-class TC_PAVST_2_7(MatterBaseTest, PAVSTTestBase, PAVSTIUtils):
+class TC_PAVST_2_7(MatterTestCommissionedDevice, PAVSTTestBase, PAVSTIUtils):
     def TC_PAVST_2_7(self) -> str:
         return "[TC-PAVST-2.7] Manually Trigger PushAV Transport Flow with Server as DUT"
 
@@ -70,6 +70,11 @@ class TC_PAVST_2_7(MatterBaseTest, PAVSTTestBase, PAVSTIUtils):
         if self.server is not None:
             self.server.terminate()
         super().teardown_class()
+
+    @async_test_body
+    async def teardown_test(self):
+        await self.postcondition_remove_tls_endpoint(self.tlsEndpointId)
+        super().teardown_test()
 
     def steps_TC_PAVST_2_7(self) -> list[TestStep]:
         return [
@@ -160,8 +165,8 @@ class TC_PAVST_2_7(MatterBaseTest, PAVSTTestBase, PAVSTIUtils):
 
         self.step("precondition")
         host_ip = self.user_params.get("host_ip", None)
-        tlsEndpointId, host_ip = await self.precondition_provision_tls_endpoint(endpoint=endpoint, server=self.server, host_ip=host_ip)
-        uploadStreamId = self.server.create_stream(SupportedIngestInterface.cmaf.value)
+        self.tlsEndpointId, host_ip = await self.precondition_provision_tls_endpoint(server=self.server, host_ip=host_ip)
+        uploadStreamId = self.server.create_stream(SupportedIngestInterface.cmaf)
 
         self.step(1)
         # Commission DUT - already done
@@ -185,7 +190,7 @@ class TC_PAVST_2_7(MatterBaseTest, PAVSTTestBase, PAVSTIUtils):
         )
 
         status = await self.allocate_one_pushav_transport(endpoint, triggerType=pvcluster.Enums.TransportTriggerTypeEnum.kContinuous,
-                                                          tlsEndPoint=tlsEndpointId, url=f"https://{host_ip}:1234/streams/{uploadStreamId}/")
+                                                          tlsEndPoint=self.tlsEndpointId, url=f"https://{host_ip}:1234/streams/{uploadStreamId}/")
         asserts.assert_equal(
             status, Status.Success, "Push AV Transport should be allocated successfully"
         )
@@ -299,7 +304,7 @@ class TC_PAVST_2_7(MatterBaseTest, PAVSTTestBase, PAVSTIUtils):
         triggerOptions = {"triggerType": pvcluster.Enums.TransportTriggerTypeEnum.kCommand,
                           "maxPreRollLen": 4000}
 
-        status = await self.allocate_one_pushav_transport(endpoint, trigger_Options=triggerOptions, tlsEndPoint=tlsEndpointId,
+        status = await self.allocate_one_pushav_transport(endpoint, trigger_Options=triggerOptions, tlsEndPoint=self.tlsEndpointId,
                                                           url=f"https://{host_ip}:1234/streams/{uploadStreamId}/")
         asserts.assert_equal(
             status, Status.Success, "Push AV Transport should be allocated successfully"

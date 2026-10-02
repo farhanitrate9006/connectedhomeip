@@ -20,8 +20,8 @@
 # === BEGIN CI TEST ARGUMENTS ===
 # test-runner-runs:
 #   run1:
-#     app: ${ALL_CLUSTERS_APP}
-#     app-args: --discriminator 1234 --KVS kvs1 --trace-to json:${TRACE_APP}.json
+#     app: ${ALL_DEVICES_APP}
+#     app-args: --device on-off-light:1 --discriminator 1234 --KVS kvs1 --groupcast
 #     script-args: >
 #       --storage-path admin_storage.json
 #       --commissioning-method on-network
@@ -40,13 +40,13 @@ from mobly import asserts
 
 import matter.clusters as Clusters
 from matter.testing.decorators import has_cluster, run_if_endpoint_matches
-from matter.testing.matter_testing import MatterBaseTest
+from matter.testing.matter_testing import MatterTestCommissionedDevice
 from matter.testing.runner import TestStep, default_matter_test_main
 
 logger = logging.getLogger(__name__)
 
 
-class TC_GC_2_1(MatterBaseTest):
+class TC_GC_2_1(MatterTestCommissionedDevice):
     def desc_TC_GC_2_1(self):
         return "[TC-GC-2.1] Attributes with DUT as Server - Provisional"
 

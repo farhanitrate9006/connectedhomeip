@@ -434,9 +434,6 @@ void BLEManagerImpl::HandlePlatformSpecificBLEEvent(const ChipDeviceEvent * apEv
     default:
         break;
     }
-
-    mServiceMode = ConnectivityManager::kCHIPoBLEServiceMode_Disabled;
-    return;
 }
 
 static int OnUnsubscribeCharComplete(uint16_t conn_handle, const struct ble_gatt_error * error, struct ble_gatt_attr * attr,
@@ -1199,22 +1196,24 @@ CHIP_ERROR BLEManagerImpl::StartAdvertising(void)
             return err;
         }
 
-        ble_addr_t addr;
-
-        /* generate new non-resolvable private address */
-        err = MapBLEError(ble_hs_id_gen_rnd(1, &addr));
-        if (err != CHIP_NO_ERROR)
+        if (mFlags.Has(Flags::kFastAdvertisingEnabled))
         {
-            ChipLogError(DeviceLayer, "ble_hs_id_gen_rnd failed: %" CHIP_ERROR_FORMAT, err.Format());
-            return err;
-        }
+            ble_addr_t addr;
+            /* generate static random address */
+            err = MapBLEError(ble_hs_id_gen_rnd(0, &addr));
+            if (err != CHIP_NO_ERROR)
+            {
+                ChipLogError(DeviceLayer, "ble_hs_id_gen_rnd failed: %" CHIP_ERROR_FORMAT, err.Format());
+                return err;
+            }
 
-        /* Set generated address */
-        err = MapBLEError(ble_gap_ext_adv_set_addr(kMatterAdvInstance, &addr));
-        if (err != CHIP_NO_ERROR)
-        {
-            ChipLogError(DeviceLayer, "ble_gap_ext_adv_set_addr failed: %" CHIP_ERROR_FORMAT, err.Format());
-            return err;
+            /* Set generated address */
+            err = MapBLEError(ble_gap_ext_adv_set_addr(kMatterAdvInstance, &addr));
+            if (err != CHIP_NO_ERROR)
+            {
+                ChipLogError(DeviceLayer, "ble_gap_ext_adv_set_addr failed: %" CHIP_ERROR_FORMAT, err.Format());
+                return err;
+            }
         }
 
         struct os_mbuf * data = os_msys_get_pkthdr(mMatterAdvDataLen, 0);
@@ -1682,6 +1681,19 @@ CHIP_ERROR BLEManagerImpl::HandleGAPCentralConnect(struct ble_gap_event * gapEve
 CHIP_ERROR BLEManagerImpl::HandleGAPPeripheralConnect(struct ble_gap_event * gapEvent)
 {
     CHIP_ERROR err = CHIP_NO_ERROR;
+
+    // A non-zero status means the connection was never established. NimBLE reports a link that
+    // drops during connection setup as BLE_GAP_EVENT_CONNECT with an error and sends no
+    // BLE_GAP_EVENT_DISCONNECT for it, so counting it would hold a connection slot forever and,
+    // with CHIPOBLE_SINGLE_CONNECTION, keep CHIPoBLE advertising stopped until reboot.
+    if (gapEvent->connect.status != 0)
+    {
+        ChipLogProgress(DeviceLayer, "BLE GAP connection failed during setup (con %u status %d); not counted, advertising resumes",
+                        gapEvent->connect.conn_handle, gapEvent->connect.status);
+        mFlags.Set(Flags::kAdvertisingRefreshNeeded);
+        return CHIP_NO_ERROR;
+    }
+
     ChipLogProgress(DeviceLayer, "BLE GAP connection established (con %u)", gapEvent->connect.conn_handle);
 
     // Track the number of active GAP connections.
@@ -1947,7 +1959,7 @@ int BLEManagerImpl::gatt_svr_chr_access_additional_data(uint16_t conn_handle, ui
         break;
     }
 
-    PlatformMgr().ScheduleWork(DriveBLEState, 0);
+    LogErrorOnFailure(PlatformMgr().ScheduleWork(DriveBLEState, 0));
 
     return err;
 }
@@ -2074,7 +2086,7 @@ void BLEManagerImpl::OnDeviceScanned(const ble_addr_t & addr, const chip::Ble::C
     DeviceLayer::SystemLayer().StartTimer(System::Clock::Seconds16(kConnectTimeout), HandleConnectTimeout, nullptr);
     chip::DeviceLayer::PlatformMgr().UnlockChipStack();
 
-    mDeviceScanner.StopScan();
+    LogErrorOnFailure(mDeviceScanner.StopScan());
 
     ConnectDevice(addr, kConnectTimeout);
 }
@@ -2145,7 +2157,7 @@ void BLEManagerImpl::NewConnection(BleLayer * bleLayer, void * appState, const S
     mBLEScanConfig.mAppState      = appState;
 
     // Initiate async scan
-    PlatformMgr().ScheduleWork(InitiateScan, static_cast<intptr_t>(BleScanState::kScanForDiscriminator));
+    LogErrorOnFailure(PlatformMgr().ScheduleWork(InitiateScan, static_cast<intptr_t>(BleScanState::kScanForDiscriminator)));
 }
 
 CHIP_ERROR BLEManagerImpl::CancelConnection()

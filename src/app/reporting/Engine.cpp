@@ -25,6 +25,7 @@
 #include <app/InteractionModelEngine.h>
 #include <app/MessageDef/StatusIB.h>
 #include <app/data-model-provider/ActionReturnStatus.h>
+#include <app/data-model-provider/AttributeChangeListener.h>
 #include <app/data-model-provider/MetadataLookup.h>
 #include <app/data-model-provider/MetadataTypes.h>
 #include <app/data-model-provider/Provider.h>
@@ -133,10 +134,6 @@ DataModel::ActionReturnStatus RetrieveClusterData(DataModel::Provider * dataMode
     TLV::TLVWriter checkpoint;
     reportBuilder.Checkpoint(checkpoint);
 
-    DataModel::ActionReturnStatus status(CHIP_NO_ERROR);
-    bool isFabricFiltered = flags.Has(ReadFlags::kFabricFiltered);
-    AttributeValueEncoder attributeValueEncoder(reportBuilder, subjectDescriptor, path, version, isFabricFiltered, encoderState);
-
     // TODO: we explicitly DO NOT validate that path is a valid cluster path (even more, above serverClusterFinder
     //       explicitly ignores that case).
     //       Validation of attribute existence is done after ACL, in `ValidateAttributeIsReadable` below
@@ -149,6 +146,15 @@ DataModel::ActionReturnStatus RetrieveClusterData(DataModel::Provider * dataMode
 
     DataModel::AttributeFinder finder(dataModel);
     std::optional<DataModel::AttributeEntry> entry = finder.Find(path);
+
+    // Fabric-sensitive attributes are always reported fabric-filtered, regardless of the
+    // FabricFiltered flag on the request.
+    const bool isFabricFiltered = flags.Has(ReadFlags::kFabricFiltered) ||
+        (entry.has_value() && entry->HasFlags(DataModel::AttributeQualityFlags::kFabricSensitive));
+    readRequest.readFlags.Set(ReadFlags::kFabricFiltered, isFabricFiltered);
+
+    DataModel::ActionReturnStatus status(CHIP_NO_ERROR);
+    AttributeValueEncoder attributeValueEncoder(reportBuilder, subjectDescriptor, path, version, isFabricFiltered, encoderState);
 
     if (auto access_status = ValidateReadAttributeACL(subjectDescriptor, path, Privilege::kView); access_status.has_value())
     {
@@ -1253,12 +1259,23 @@ void Engine::ScheduleUrgentEventDeliverySync(Optional<FabricIndex> fabricIndex)
     Run();
 }
 
-void Engine::MarkDirty(const AttributePathParams & path)
+void Engine::OnAttributeChanged(const ConcreteAttributePath & path, DataModel::AttributeChangeType type)
 {
-    CHIP_ERROR err = SetDirty(path);
+    VerifyOrReturn(type == DataModel::AttributeChangeType::kReportable);
+
+    CHIP_ERROR err = SetDirty({ path.mEndpointId, path.mClusterId, path.mAttributeId });
     if (err != CHIP_NO_ERROR)
     {
         ChipLogError(DataManagement, "Failed to set path dirty: %" CHIP_ERROR_FORMAT, err.Format());
+    }
+}
+
+void Engine::OnEndpointChanged(EndpointId endpointId, DataModel::EndpointChangeType type)
+{
+    CHIP_ERROR err = SetDirty(AttributePathParams(endpointId));
+    if (err != CHIP_NO_ERROR)
+    {
+        ChipLogError(DataManagement, "Failed to set endpoint %u dirty: %" CHIP_ERROR_FORMAT, endpointId, err.Format());
     }
 }
 

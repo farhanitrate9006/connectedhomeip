@@ -20,6 +20,7 @@
 #include <app/util/attribute-storage.h>
 #include <app/util/endpoint-config-api.h>
 #include <data-model-providers/codegen/CodegenDataModelProvider.h>
+#include <lib/support/CharSpanToStdString.h>
 #include <lib/support/CodeUtils.h>
 
 using namespace chip;
@@ -28,9 +29,6 @@ using namespace chip::app::Clusters;
 using namespace chip::app::Clusters::Actions;
 
 namespace {
-
-// Maximum SetupURL length per the Matter spec (Actions cluster, SetupURL attribute).
-constexpr size_t kMaxSetupURLLength = 512u;
 
 ActionsCluster::OptionalAttributesSet BuildOptionalAttributes(EndpointId endpointId)
 {
@@ -46,13 +44,10 @@ ActionsCluster::OptionalAttributesSet BuildOptionalAttributes(EndpointId endpoin
 // An empty return value means the attribute is absent or unreadable.
 std::string ReadSetupURL(EndpointId endpointId)
 {
-    VerifyOrReturnValue(emberAfContainsAttribute(endpointId, Actions::Id, Attributes::SetupURL::Id), std::string());
-    // Use a stack buffer for the Ember read; the result is then copied into a std::string.
-    char buf[kMaxSetupURLLength];
-    MutableCharSpan urlSpan(buf);
-    VerifyOrReturnValue(Attributes::SetupURL::Get(endpointId, urlSpan) == Protocols::InteractionModel::Status::Success,
+    CharSpan urlSpan;
+    VerifyOrReturnValue(Attributes::SetupURL::GetDefault(endpointId, urlSpan) == Protocols::InteractionModel::Status::Success,
                         std::string());
-    return std::string(urlSpan.data(), urlSpan.size());
+    return CharSpanToStdString(urlSpan);
 }
 
 std::optional<CharSpan> SetupURLSpan(const std::string & url)
@@ -81,7 +76,13 @@ ActionsServer::ActionsServer(EndpointId endpointId, Delegate & delegate) :
 
 ActionsServer::~ActionsServer()
 {
-    Shutdown();
+    if (mRegistered)
+    {
+        // Shutdown() was not called before destruction. Call it now to avoid
+        // leaving a dangling pointer in the data model provider registry.
+        ChipLogError(AppServer, "ActionsServer destroyed without Shutdown() being called; shutting down now.");
+        Shutdown();
+    }
     --sInstanceCount;
 }
 
@@ -100,11 +101,11 @@ void ActionsServer::Shutdown()
     CHIP_ERROR err = CodegenDataModelProvider::Instance().Registry().Unregister(&mCluster.Cluster());
     if (err != CHIP_NO_ERROR)
     {
-        ChipLogError(AppServer, "Failed to unregister cluster %u/" ChipLogFormatMEI ": %" CHIP_ERROR_FORMAT,
-                     mCluster.Cluster().GetPaths()[0].mEndpointId, ChipLogValueMEI(DeviceEnergyManagement::Id), err.Format());
+        [[maybe_unused]] const ConcreteClusterPath path = mCluster.Cluster().GetPaths()[0];
+        ChipLogError(AppServer, "Failed to unregister cluster %u/" ChipLogFormatMEI ": %" CHIP_ERROR_FORMAT, path.mEndpointId,
+                     ChipLogValueMEI(path.mClusterId), err.Format());
     }
 }
-
 void ActionsServer::ActionListModified(EndpointId aEndpoint)
 {
     VerifyOrReturn(aEndpoint == mCluster.Cluster().GetPaths()[0].mEndpointId);

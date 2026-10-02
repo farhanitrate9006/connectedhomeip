@@ -77,9 +77,8 @@ void CommissioningWindowManager::OnPlatformEvent(const DeviceLayer::ChipDeviceEv
         mServer->GetBleLayerObject()->CloseAllBleConnections();
 #endif
 #if CHIP_DEVICE_CONFIG_ENABLE_WIFIPAF
-        chip::WiFiPAF::WiFiPAFLayer::GetWiFiPAFLayer().Shutdown([](uint32_t id, WiFiPAF::WiFiPafRole role) {
-            TEMPORARY_RETURN_IGNORED DeviceLayer::ConnectivityMgr().WiFiPAFShutdown(id, role);
-        });
+        chip::WiFiPAF::WiFiPAFLayer::GetWiFiPAFLayer().Shutdown();
+        mPublishId = WiFiPAF::kUndefinedWiFiPafSessionId;
 #endif
     }
     else if (event->Type == DeviceLayer::DeviceEventType::kFailSafeTimerExpired)
@@ -141,6 +140,8 @@ void CommissioningWindowManager::ResetState()
     memset(mECMSalt, 0, sizeof(mECMSalt));
 
     DeviceLayer::SystemLayer().CancelTimer(HandleCommissioningWindowTimeout, this);
+    DeviceLayer::SystemLayer().CancelTimer(HandleSessionEstablishmentTimeout, this);
+
     mCommissioningTimeoutTimerArmed = false;
 }
 
@@ -217,7 +218,10 @@ void CommissioningWindowManager::OnSessionEstablished(const SessionHandle & sess
         mAppDelegate->OnCommissioningSessionStarted();
     }
 
-    TEMPORARY_RETURN_IGNORED StopAdvertisement(/* aShuttingDown = */ false);
+    // Stop accepting new PASE attempts, but keep the WiFi-PAF publisher alive: the
+    // PAFTP session that just completed PASE is the data path for the rest of
+    // commissioning, and cancelling publish here tears it down mid-flow.
+    TEMPORARY_RETURN_IGNORED StopAdvertisement(/* aShuttingDown = */ false, /* aKeepPAFPublish = */ true);
 
     auto & failSafeContext = Server::GetInstance().GetFailSafeContext();
     // This should never be armed because we don't allow CASE sessions to arm the failsafe when the commissioning window is open and
@@ -337,6 +341,9 @@ CHIP_ERROR CommissioningWindowManager::OpenBasicCommissioningWindow(Seconds32 co
 #else
     SetBLE(false);
 #endif // CONFIG_NETWORK_LAYER_BLE
+#if CHIP_DEVICE_CONFIG_ENABLE_WIFIPAF
+    SetWiFiPAF(advertisementMode == chip::CommissioningWindowAdvertisement::kAllSupported && mWiFiPAFAdvertisingAllowed);
+#endif
 
     mFailedCommissioningAttempts = 0;
 
@@ -370,6 +377,9 @@ CHIP_ERROR CommissioningWindowManager::OpenEnhancedCommissioningWindow(Seconds32
     // Once a device is operational, it shall be commissioned into subsequent fabrics using
     // the operational network only.
     SetBLE(false);
+#if CHIP_DEVICE_CONFIG_ENABLE_WIFIPAF
+    SetWiFiPAF(false);
+#endif
 
     VerifyOrReturnError(salt.size() <= sizeof(mECMSalt), CHIP_ERROR_INVALID_ARGUMENT);
 
@@ -510,6 +520,18 @@ CHIP_ERROR CommissioningWindowManager::StartAdvertisement()
         ReturnErrorOnFailure(err);
     }
 #endif // CONFIG_NETWORK_LAYER_BLE
+#if CHIP_DEVICE_CONFIG_ENABLE_WIFIPAF
+    if (mIsWiFiPAF)
+    {
+        ChipLogProgress(WiFiPAF, "Starting Wi-Fi PAF publish");
+        auto err = DeviceLayer::ConnectivityMgr().SetWiFiPAFAdvertisingEnabled(true, mPublishId);
+        if (err != CHIP_NO_ERROR)
+        {
+            ChipLogError(WiFiPAF, "Failed to start Wi-Fi PAF publish: %" CHIP_ERROR_FORMAT, err.Format());
+            mPublishId = WiFiPAF::kUndefinedWiFiPafSessionId;
+        }
+    }
+#endif
 
     if (mUseECM)
     {
@@ -531,7 +553,7 @@ CHIP_ERROR CommissioningWindowManager::StartAdvertisement()
     return CHIP_NO_ERROR;
 }
 
-CHIP_ERROR CommissioningWindowManager::StopAdvertisement(bool aShuttingDown)
+CHIP_ERROR CommissioningWindowManager::StopAdvertisement(bool aShuttingDown, bool aKeepPAFPublish)
 {
     TEMPORARY_RETURN_IGNORED RestoreDiscriminator();
 
@@ -558,6 +580,20 @@ CHIP_ERROR CommissioningWindowManager::StopAdvertisement(bool aShuttingDown)
         (void) chip::DeviceLayer::ConnectivityMgr().SetBLEAdvertisingEnabled(false);
     }
 #endif // CONFIG_NETWORK_LAYER_BLE
+#if CHIP_DEVICE_CONFIG_ENABLE_WIFIPAF
+    // Cancel PAF advertisement whenever the commissioning window closes, not only on
+    // shutdown: a publisher left running holds a NAN session slot, so a device acting as
+    // a commissioning proxy would keep advertising itself while it needs the radio to
+    // subscribe on a commissionee's behalf.
+    //
+    // Skipped when aKeepPAFPublish is set (OnSessionEstablished), where the PAFTP session
+    // is still carrying the remainder of commissioning.
+    if (!aKeepPAFPublish && (mIsWiFiPAF) && (mPublishId != 0) && (mPublishId != WiFiPAF::kUndefinedWiFiPafSessionId))
+    {
+        ChipLogProgress(WiFiPAF, "Canceling Wi-Fi PAF publish");
+        TEMPORARY_RETURN_IGNORED DeviceLayer::ConnectivityMgr().SetWiFiPAFAdvertisingEnabled(false, mPublishId);
+    }
+#endif
 
     if (mAppDelegate != nullptr)
     {

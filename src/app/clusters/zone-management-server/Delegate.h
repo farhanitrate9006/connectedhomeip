@@ -28,7 +28,7 @@ namespace app {
 namespace Clusters {
 namespace ZoneManagement {
 
-class ZoneMgmtServer;
+class ZoneManagementCluster;
 
 /** @brief
  *  Defines interfaces for implementing application-specific logic for various aspects of the ZoneManagement Cluster.
@@ -108,6 +108,15 @@ public:
     virtual Protocols::InteractionModel::Status RemoveTrigger(uint16_t zoneID) = 0;
 
     /**
+     * @brief verifies whether a zone with the provided zoneId is present on the server, and not a Privacy Zone.
+     *
+     * @param[in] zoneId Indicates the Id of the zone to be checked against known zones
+     *
+     * @return true if the zoneId is found, and the use is not privacy.
+     */
+    virtual bool IsValidAnalysisZone(const uint16_t zoneId) = 0;
+
+    /**
      *   @brief Delegate callback for notifying change in an attribute.
      *
      */
@@ -131,21 +140,13 @@ public:
 
     virtual CHIP_ERROR LoadTriggers(std::vector<ZoneTriggerControlStruct> & aTriggers) = 0;
 
-    ZoneMgmtServer * GetZoneMgmtServer() const { return mZoneMgmtServer; }
+    ZoneManagementCluster * GetZoneMgmtServer() const { return mZoneManagementServer; }
 
-private:
-    friend class ZoneMgmtServer;
-
-    ZoneMgmtServer * mZoneMgmtServer = nullptr;
-
-    /**
-     * This method is used by the SDK to ensure the delegate points to the server instance it's associated with.
-     * When a server instance is created or destroyed, this method will be called to set and clear, respectively,
-     * the pointer to the server instance.
-     *
-     * @param aZoneMgmtServer  A pointer to the ZoneMgmtServer object related to this delegate object.
-     */
-    void SetZoneMgmtServer(ZoneMgmtServer * aZoneMgmtServer) { mZoneMgmtServer = aZoneMgmtServer; }
+protected:
+    friend class ZoneManagementCluster;
+    // This is named mZoneManagementServer instead of mZoneManagementCluster to preserve backwards compatibility with legacy usage.
+    ZoneManagementCluster * mZoneManagementServer = nullptr;
+    void SetZoneManagementCluster(ZoneManagementCluster * zoneManagementCluster) { mZoneManagementServer = zoneManagementCluster; }
 };
 
 } // namespace ZoneManagement
